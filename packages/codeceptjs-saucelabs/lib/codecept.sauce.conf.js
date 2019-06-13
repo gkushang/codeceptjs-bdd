@@ -24,7 +24,14 @@ function getBrowsers() {
 
 let conf = {
   helpers: {
-    WebDriver: getBrowsers()[0]
+    WebDriver: {
+      browser: getBrowsers()[0].browser,
+      user: process.env.SAUCE_USERNAME,
+      key: process.env.SAUCE_KEY
+    },
+    SauceHelper: {
+      require: "codeceptjs-saucehelper"
+    }
   },
   plugins: {
     wdio: {
