@@ -14,7 +14,6 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
     }
 
     function getBrowsers() {
-
         if (isSauceRequested()) {
             let multibrowsers = [];
             let requestedBrowsers = process.profile.split(SAUCE_DELIMITER)[1].split(MULTI_BROWSER_DELIMITER);
@@ -51,12 +50,14 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
                 chunks: getBrowsers().length,
                 browsers: getBrowsers()
             },
+            parallel: {
+                browsers: getBrowsers()
+            },
         }
     };
 
     if (isSauceRequested()) {
         if (sauceUsername && sauceKey) {
-            console.log('***********************************************************************  in helper');
             process.env.SAUCE_USERNAME = sauceUsername;
             process.env.SAUCE_KEY = sauceKey;
             conf.plugins.wdio.user = sauceUsername;
