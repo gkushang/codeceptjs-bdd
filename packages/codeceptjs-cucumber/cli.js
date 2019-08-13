@@ -90,10 +90,14 @@ const failure = (message) => {
 const run = async () => {
     init();
 
+    console.log('pwd ', process.cwd());
     const { ROOT_PATH, RELATIVE_PATH, INTEGRATE_SAUCE_LABS } =  await askQuestions_aboutLocations();
 
-    shell.cp('-R', 'packages/codeceptjs-cucumber/acceptance', path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance'));
-    shell.cp('-R', 'packages/codeceptjs-cucumber/codecept.conf.js', path.join(ROOT_PATH));
+    shell.cp('-R',  path.join(process.cwd(), 'acceptance'), path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance'));
+    shell.cp('-R', path.join(process.cwd(), 'codecept.conf.js'), path.join(ROOT_PATH));
+
+    console.log('ROOT_PATH ', ROOT_PATH);
+
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
 
     if(INTEGRATE_SAUCE_LABS === true) {
