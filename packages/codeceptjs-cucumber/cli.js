@@ -27,17 +27,12 @@ const init = () => {
             ' to your workspace. It will create ' + chalk.blue.bold.underline('acceptance') + ' directory at your acceptance test location and ' + chalk.blue.bold.underline('configurations') + ' under your workspace.\n'));
 }
 
-const askInitQuestions = () => {
-    const questions = [
+const askQuestions_aboutLocations = () => {
+    return inquirer.prompt([
         {
             name: 'ROOT_PATH',
             type: 'input',
-            message: 'Enter the path to your destination Root project: '
-        },
-        {
-            name: 'MODULE_PATH',
-            type: 'input',
-            message: 'Enter the path to your Module you want to add tests for (if it is different than the Root project path): '
+            message: 'Enter the path to your destination Root project (path to package.json): '
         },
         {
             name: 'RELATIVE_PATH',
@@ -45,26 +40,36 @@ const askInitQuestions = () => {
             message: 'Enter the Relative path to you Tests folder: '
         },
         {
+            name: 'INTEGRATE_SAUCE_LABS',
             type: 'confirm',
-            name: 'RUN',
-            message: 'The CLI also offers to test your setup and configurations. It provides the simple example tests of GitHub Search Feature. Do you want to run a sample GitHub Tests once your Setup is complete?'
+            message: 'Do you want to integrate SauceLabs?'
         }
-
-
-    ];
-    return inquirer.prompt(questions);
+    ]);
 };
 
-const askRunQuestions = () => {
-    const questions = [
+const askQuestions_aboutSauceLabsAccount = () => {
+    return inquirer.prompt([
         {
-            type: 'confirm',
-            name: 'RUN',
-            message: 'The setup comes with examples of GitHub Acceptance Tests. Do you want to run a sample GitHub Tests to check your setup?'
+            name: 'SAUCE_USERNAME',
+            type: 'input',
+            message: 'Enter your Sauce Username: '
+        },
+        {
+            name: 'SAUCE_KEY',
+            type: 'input',
+            message: 'Enter your Sauce Access Key: '
         }
+    ]);
+};
 
-    ];
-    return inquirer.prompt(questions);
+const askQuestions_toExecuteScenarios = () => {
+    return inquirer.prompt([
+        {
+            name: 'SHOULD_EXECUTE',
+            type: 'confirm',
+            message: 'The CLI also offers to test your setup and configurations. It provides the simple example tests of GitHub Search Feature. Do you want to run a sample GitHub Tests once your Setup is complete?'
+        }
+    ]);
 };
 
 const success = (filepath) => {
@@ -83,12 +88,21 @@ const failure = (message) => {
 const run = async () => {
     init();
 
-    const { ROOT_PATH, MODULE_PATH, RELATIVE_PATH, RUN } =  await askInitQuestions();
+    const { ROOT_PATH, RELATIVE_PATH, INTEGRATE_SAUCE_LABS } =  await askQuestions_aboutLocations();
 
-    shell.cp('-R', 'packages/codeceptjs-cucumber/acceptance', path.join(MODULE_PATH, RELATIVE_PATH, 'acceptance'));
-    shell.cp('-R', 'packages/codeceptjs-cucumber/codecept.conf.js', MODULE_PATH);
+    shell.cp('-R', 'packages/codeceptjs-cucumber/acceptance', path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance'));
+    shell.cp('-R', 'packages/codeceptjs-cucumber/codecept.conf.js', path.join(ROOT_PATH));
+    const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
 
-    console.log('ROOT_PATH: ', ROOT_PATH);
+    if(INTEGRATE_SAUCE_LABS === true) {
+        const { SAUCE_USERNAME, SAUCE_KEY } =  await askQuestions_aboutSauceLabsAccount();
+        shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
+        shell.sed('-i', '<sauce_key>', SAUCE_KEY, configFile);
+    }
+
+    shell.sed('-i', './acceptance/', './' + RELATIVE_PATH +'/acceptance/', configFile);
+
+    const { SHOULD_EXECUTE } =  await askQuestions_toExecuteScenarios();
 
     shell.cd(ROOT_PATH);
 
@@ -96,13 +110,13 @@ const run = async () => {
         failure('Yarn command failed.');
     }
 
-    if(RUN === true) {
-        if (shell.exec('./node_modules/.bin/codeceptjs run --config=./modules/codecept.conf.js --grep=@search_results' ).code !== 0) {
+    if(SHOULD_EXECUTE === true) {
+        if (shell.exec('./node_modules/.bin/codeceptjs run --grep=@search_results' ).code !== 0) {
             failure('Execution of Acceptance Test Failed.');
         }
     }
 
-    success(path.join(MODULE_PATH, RELATIVE_PATH, 'acceptance'));
+    success(path.join(ROOT_PATH, RELATIVE_PATH));
 };
 
 run();
