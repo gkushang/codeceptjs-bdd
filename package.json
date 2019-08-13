@@ -7,12 +7,22 @@
   "devDependencies": {
     "lerna": "^3.14.1"
   },
+  "bin": {
+    "codeceptjs-e2e": "./cli.js"
+  },
+  "main": "cli.js",
+  "scripts": {
+    "start": "node cli.js"
+  },
   "version": "1.0.0",
   "description": "codeceptjs e2e solution",
-  "main": "index.js",
   "author": "Kushang Gajjar <g.kushang@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "codeceptjs-saucelabs": "^1.0.6"
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.3",
+    "inquirer": "^6.5.1",
+    "node-emoji": "^1.10.0",
+    "shelljs": "^0.8.3"
   }
 }

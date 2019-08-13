@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const inquirer = require('inquirer');
 const chalk = require('chalk');
 const figlet = require('figlet');
@@ -18,14 +20,14 @@ const init = () => {
 
     console.log(chalk.blue.underline.bold(
         '\nWelcome to CodeceptJs-E2E CLI!'
-    ))
+    ));
 
     console.log(
         chalk.green.bold(
         '\nThe CodeceptJs-E2E CLI is a command-line interface tool that you use to Create and Initialize the base ' +
             chalk.blue.bold.underline('CodeceptJS Cucumber E2E Frameowork') +
             ' to your workspace. It will create ' + chalk.blue.bold.underline('acceptance') + ' directory at your acceptance test location and ' + chalk.blue.bold.underline('configurations') + ' under your workspace.\n'));
-}
+};
 
 const askQuestions_aboutLocations = () => {
     return inquirer.prompt([
@@ -37,7 +39,7 @@ const askQuestions_aboutLocations = () => {
         {
             name: 'RELATIVE_PATH',
             type: 'input',
-            message: 'Enter the Relative path to you Tests folder: '
+            message: 'Enter the Relative path to your tests folder: '
         },
         {
             name: 'INTEGRATE_SAUCE_LABS',
