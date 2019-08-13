@@ -3,9 +3,10 @@ const chalk = require('chalk');
 const figlet = require('figlet');
 const shell = require('shelljs');
 const emoji = require('node-emoji');
+const path = require('path');
 
 const init = () => {
-    console.log('\n' + 
+    console.log('\n' +
         chalk.yellow(
             figlet.textSync('E2E Codecept JS', {
                 font: 'Ghost',
@@ -29,14 +30,19 @@ const init = () => {
 const askInitQuestions = () => {
     const questions = [
         {
-            name: 'DESIRED_PROJECT_PATH',
+            name: 'ROOT_PATH',
             type: 'input',
             message: 'Enter the path to your destination Root project: '
         },
         {
-            name: 'ACCEPTANCE_PATH',
+            name: 'MODULE_PATH',
             type: 'input',
-            message: 'Enter the path to your desitnation Acceptance tests location: '
+            message: 'Enter the path to your Module you want to add tests for (if it is different than the Root project path): '
+        },
+        {
+            name: 'RELATIVE_PATH',
+            type: 'input',
+            message: 'Enter the Relative path to you Tests folder: '
         },
         {
             type: 'confirm',
@@ -77,13 +83,14 @@ const failure = (message) => {
 const run = async () => {
     init();
 
-    const answers = await askInitQuestions();
+    const { ROOT_PATH, MODULE_PATH, RELATIVE_PATH, RUN } =  await askInitQuestions();
 
-    const { DESIRED_PROJECT_PATH, ACCEPTANCE_PATH, RUN } = answers;
+    shell.cp('-R', 'packages/codeceptjs-cucumber/acceptance', path.join(MODULE_PATH, RELATIVE_PATH, 'acceptance'));
+    shell.cp('-R', 'packages/codeceptjs-cucumber/codecept.conf.js', MODULE_PATH);
 
-    shell.cp('-R', 'packages/codeceptjs-cucumber/acceptance', ACCEPTANCE_PATH);
-    shell.cp('-R', 'packages/codeceptjs-cucumber/codecept.conf.js', ACCEPTANCE_PATH);
-    shell.cd(DESIRED_PROJECT_PATH);
+    console.log('ROOT_PATH: ', ROOT_PATH);
+
+    shell.cd(ROOT_PATH);
 
     if (shell.exec('yarn add codeceptjs-saucelabs codeceptjs-shared @wdio/selenium-standalone-service allure-commandline codeceptjs codeceptjs-selenium debug faker protractor rimraf should webdriverio deepmerge -D' ).code !== 0) {
         failure('Yarn command failed.');
@@ -95,7 +102,7 @@ const run = async () => {
         }
     }
 
-    success(ACCEPTANCE_PATH);
+    success(path.join(MODULE_PATH, RELATIVE_PATH, 'acceptance'));
 };
 
 run();
