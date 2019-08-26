@@ -28,9 +28,6 @@ let conf = {
         WebDriver: {
             url: HOST
         },
-        Faker: {
-            require: RELATIVE_PATH + 'helpers/faker.helper.js'
-        },
         REST: {}
     },
     gherkin: {
