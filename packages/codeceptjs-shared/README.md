@@ -2,7 +2,7 @@
 
 ***Shared library for the CodeceptJS***
 
-[![License](https://img.shields.io/npm/l/codeceptjs-shared.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/codeceptjs-shared.svg)](https://www.npmjs.com/package/codeceptjs-shared) [![License](https://img.shields.io/npm/l/codeceptjs-shared.svg)](LICENSE)
 
 ## Install
 
