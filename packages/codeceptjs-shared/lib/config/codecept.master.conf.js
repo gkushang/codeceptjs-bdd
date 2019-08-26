@@ -73,4 +73,4 @@ if (!(process.profile && process.profile.match('sauce:[a-zA-Z]'))) {
     conf.multiple.parallel.browsers = [BROWSER];
 }
 
-exports.conf = conf;
+module.exports = conf;
