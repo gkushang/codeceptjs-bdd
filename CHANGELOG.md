@@ -1,3 +1,18 @@
+## un-plublished
+
+### codeceptjs-shared
+
+* Breaking Change: import the existing config as `require(codeceptjs-shared).config.master.conf`
+* Webdriver Commands Helper
+    * scrollAndClick
+    * seeVisible
+    * scrollDownToPixel
+    * scrollToElement
+* Custom Methods
+    * grabCss
+    * takeNap
+
+
 ## 1.1.3 (Aug-12-2019)
 
 ### codeceptjs-saucelabs
