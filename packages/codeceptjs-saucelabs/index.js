@@ -1,4 +1,4 @@
-const sauce = require('./codecept.sauce.conf');
+const sauce = require('./lib/codecept.sauce.conf');
 
  module.exports = {
      config: { sauce }
