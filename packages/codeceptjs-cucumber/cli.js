@@ -79,7 +79,19 @@ const askQuestions_toExecuteScenarios = () => {
     ]);
 };
 
+const addInfo = (username, key) => {
+
+    console.log('\n' +
+        chalk.bold.red(emoji.emojify(':information_desk_person:  ') + 'It is recommended to export your Saucelabs Username and Access Key through your ./bash_profile or ./zshrc. Add following to your profile:') +
+        chalk.bold.red('\n\n' +
+            'export SAUCE_USERNAME=' + username +'\n' +
+            'export SAUCE_KEY='+ key + '\n\n')
+    );
+
+};
+
 const success = (filepath) => {
+
     console.log('\n' +
         chalk.white.bgRed.bold(emoji.emojify(':clap: :thumbsup:') + ` Done! Acceptance Tests Created at ${filepath}\n`)
     );
@@ -110,6 +122,7 @@ const run = async () => {
         shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
         shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, secretFile);
         shell.sed('-i', '<sauce_key>', SAUCE_KEY, secretFile);
+        addInfo(SAUCE_USERNAME, SAUCE_KEY);
     }
 
     shell.sed('-i', '<name>', PROJECT_NAME, configFile);
