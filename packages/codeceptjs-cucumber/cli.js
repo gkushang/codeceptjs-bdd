@@ -126,15 +126,12 @@ const run = async () => {
 
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
     const packageJson = path.join(ROOT_PATH, 'package.json');
-    const secretFile = path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance', '.secrets.js');
 
     shell.sed('-i', '<name>', PROJECT_NAME, configFile);
 
     if(INTEGRATE_SAUCE_LABS) {
         const { SAUCE_USERNAME, SAUCE_KEY } =  await askQuestions_aboutSauceLabsAccount();
         shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
-        shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, secretFile);
-        shell.sed('-i', '<sauce_key>', SAUCE_KEY, secretFile);
         addInfo(SAUCE_USERNAME, SAUCE_KEY);
     }
 
