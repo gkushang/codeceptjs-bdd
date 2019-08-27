@@ -84,6 +84,7 @@ const askQuestions_toExecuteScenarios = () => {
 const addInfo = (username, key) => {
 
     console.log('\n' +
+        chalk.bold.red(emoji.emojify(':warning:  ') + 'You must export Saucelabs Access Key through Environment Variable "SAUCE_KEY" to run your tests on Saucelabs. It is not recommend to store it on the Source Control.\n\n') +
         chalk.bold.red(emoji.emojify(':information_desk_person:  ') + 'It is recommended to export your Saucelabs Username and Access Key through your ./bash_profile or ./zshrc. Add following to your profile:') +
         chalk.bold.red('\n\n' +
             'export SAUCE_USERNAME=' + username +'\n' +
