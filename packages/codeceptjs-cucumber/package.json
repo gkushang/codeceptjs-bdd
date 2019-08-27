@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "CodeceptJs Cucumber ",
   "scripts": {
+    "start": "node cli.js",
     "cli": "node cli.js",
     "clean": "rimraf tests/acceptance/report/*.*",
     "acceptance": "yarn clean && ./node_modules/.bin/codeceptjs run --verbose --features",

@@ -8,6 +8,8 @@ const emoji = require('node-emoji');
 const path = require('path');
 
 const init = () => {
+    addScripts();
+
     console.log('\n' +
         chalk.yellow(
             figlet.textSync('E2E Codecept JS', {
@@ -90,6 +92,16 @@ const addInfo = (username, key) => {
 
 };
 
+
+const addScripts = (packageJson) => {
+    const SCRIPTS = '"scripts": {\n' +
+        '\t"acceptance": "npx codeceptjs run --verbose",\n' +
+        '\t"acceptance:multiple": "npx codeceptjs run-multiple ",\n' +
+        '\t"acceptance:report": "npx allure serve ",';
+
+    shell.sed('-i','"scripts": {' , SCRIPTS , packageJson);
+};
+
 const success = (filepath) => {
 
     console.log('\n' +
@@ -113,6 +125,7 @@ const run = async () => {
     shell.cp('-R', path.join(process.cwd(), 'codecept.conf.js'), path.join(ROOT_PATH));
 
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
+    const packageJson = path.join(ROOT_PATH, 'package.json');
     const secretFile = path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance', '.secrets.js');
 
     shell.sed('-i', '<name>', PROJECT_NAME, configFile);
@@ -129,6 +142,8 @@ const run = async () => {
 
     shell.sed('-i', './acceptance/', './' + RELATIVE_PATH +'/acceptance/', configFile);
 
+    addScripts(packageJson);
+
     const { SHOULD_EXECUTE } =  await askQuestions_toExecuteScenarios();
 
     console.info('Change Directory to: ', ROOT_PATH);
@@ -139,6 +154,9 @@ const run = async () => {
     if (shell.exec('yarn add codeceptjs-saucelabs@latest codeceptjs-shared@latest @wdio/selenium-standalone-service allure-commandline codeceptjs debug faker protractor rimraf should webdriverio deepmerge -D' ).code !== 0) {
         failure('Yarn command failed.');
     }
+
+
+    shell.cp('-R', path.join(ROOT_PATH, 'package.json'));
 
     if(SHOULD_EXECUTE) {
 
@@ -152,7 +170,7 @@ const run = async () => {
             )
         );
 
-        if (shell.exec('./node_modules/.bin/codeceptjs run --grep=@search_results' ).code !== 0) {
+        if (shell.exec('npx codeceptjs run --grep=@search_results --verbose' ).code !== 0) {
             failure('Execution of Acceptance Test Failed.');
         }
     }
