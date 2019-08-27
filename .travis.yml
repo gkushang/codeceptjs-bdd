@@ -14,5 +14,6 @@ install:
 script:
   - whereis google-chrome-stable
   - whereis chromedriver
+  - npm test
 node_js:
   - 10
