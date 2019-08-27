@@ -122,8 +122,7 @@ const run = async () => {
 
     shell.cd(ROOT_PATH);
 
-    console.log('pwd:: ', process.cwd());
-    console.log('ROOT_PATH:: ', ROOT_PATH);
+    console.info('Change Directory to: ', ROOT_PATH);
     if (shell.exec('yarn add codeceptjs-saucelabs@latest codeceptjs-shared@latest @wdio/selenium-standalone-service allure-commandline codeceptjs debug faker protractor rimraf should webdriverio deepmerge -D' ).code !== 0) {
         failure('Yarn command failed.');
     }
