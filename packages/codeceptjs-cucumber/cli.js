@@ -106,7 +106,7 @@ const addScripts = (packageJson) => {
 const success = (filepath) => {
 
     console.log('\n' +
-        chalk.white.bgRed.bold(emoji.emojify(':clap: :thumbsup:') + ` Done! Acceptance Tests Created at ${filepath}\n`)
+        chalk.yellow.bold(emoji.emojify(':clap: :thumbsup:') + ` Done! Acceptance Tests Created at ${filepath}\n`)
     );
 };
 
@@ -149,12 +149,21 @@ const run = async () => {
     shell.cd(ROOT_PATH);
 
     console.info('Change Directory to: ', ROOT_PATH);
+
+    console.log('\n\n' +
+        chalk.white.bgBlue.bold(emoji.emojify(':rocket:') + ` Installing dependencies...\n\n`)
+    );
+
     if (shell.exec('yarn add codeceptjs-saucelabs@latest codeceptjs-shared@latest @wdio/selenium-standalone-service allure-commandline codeceptjs debug faker protractor rimraf should webdriverio deepmerge -D' ).code !== 0) {
         failure('Yarn command failed.');
     }
 
 
     shell.cp('-R', path.join(ROOT_PATH, 'package.json'));
+
+    console.log('\n' +
+        chalk.white.bgBlue.bold(emoji.emojify(':coffee:') + ` Setup Completed!`)
+    );
 
     if(SHOULD_EXECUTE) {
 
@@ -168,7 +177,7 @@ const run = async () => {
             )
         );
 
-        if (shell.exec('npx codeceptjs run --grep=@search_results --verbose' ).code !== 0) {
+        if (shell.exec('yarn acceptance --grep=@search_results --verbose' ).code !== 0) {
             failure('Execution of Acceptance Test Failed.');
         }
     }
