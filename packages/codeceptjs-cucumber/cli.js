@@ -101,11 +101,15 @@ const run = async () => {
     shell.cp('-R', path.join(process.cwd(), 'codecept.conf.js'), path.join(ROOT_PATH));
 
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
+    const secretFile = path.join(ROOT_PATH, RELATIVE_PATH, 'acceptance', '.secrets.js');
+
+    shell.sed('-i', '<name>', PROJECT_NAME, configFile);
 
     if(INTEGRATE_SAUCE_LABS) {
         const { SAUCE_USERNAME, SAUCE_KEY } =  await askQuestions_aboutSauceLabsAccount();
         shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
-        shell.sed('-i', '<sauce_key>', SAUCE_KEY, configFile);
+        shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, secretFile);
+        shell.sed('-i', '<sauce_key>', SAUCE_KEY, secretFile);
     }
 
     shell.sed('-i', '<name>', PROJECT_NAME, configFile);
@@ -118,6 +122,8 @@ const run = async () => {
 
     shell.cd(ROOT_PATH);
 
+    console.log('pwd:: ', process.cwd());
+    console.log('ROOT_PATH:: ', ROOT_PATH);
     if (shell.exec('yarn add codeceptjs-saucelabs@latest codeceptjs-shared@latest @wdio/selenium-standalone-service allure-commandline codeceptjs debug faker protractor rimraf should webdriverio deepmerge -D' ).code !== 0) {
         failure('Yarn command failed.');
     }
