@@ -24,6 +24,10 @@
     "name": "Kushang Gajjar",
     "email": "g.kushang@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkushang/codeceptjs-e2e.git"
+  },
   "devDependencies": {
     "allure-commandline": "^2.9.0",
     "chalk": "^2.4.2",
