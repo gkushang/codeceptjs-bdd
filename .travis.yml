@@ -11,9 +11,11 @@ install:
   - sudo mv -f ~/chromedriver /usr/local/share/
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - npm i lerna
 script:
   - whereis google-chrome-stable
   - whereis chromedriver
-  - npm test
+  - lerna bootstrap
+  - lerna run --scope codeceptjs-cucumber test
 node_js:
-  - 10
+  - 12
