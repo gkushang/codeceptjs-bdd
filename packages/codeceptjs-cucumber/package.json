@@ -10,7 +10,7 @@
     "acceptance:multiple": "./node_modules/.bin/codeceptjs run-multiple",
     "acceptance:report": "./node_modules/.bin/allure serve ./acceptance/report",
     "bdd:snippets": "./node_modules/.bin/codeceptjs bdd:snippets",
-    "test": "npm run acceptance"
+    "test": "npm run acceptance --profile chrome:headless"
   },
   "bin": {
     "codeceptjs-e2e": "./cli.js"
