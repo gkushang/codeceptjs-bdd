@@ -125,7 +125,7 @@ Check it out https://www.gatsbyjs.org/docs/deploying-and-hosting/
 Q: I saw the localhost keep refreshing and the page is not rendered, what should I do?
 
 A: It's probably due to the caching issue. You can stop the server and run 
-    ```shell
+    ```
     gatsby clean
     ```
     Then, start your localhost again. If it doesn't help, try clean your browser cache.
