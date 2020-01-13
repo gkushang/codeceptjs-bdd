@@ -12,8 +12,9 @@ import Footer from './footer';
 import Header from './header';
 import Sidebar from './sidebar';
 import { makeStyles } from '@material-ui/core/styles';
+import Drawer from "@material-ui/core/Drawer";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
@@ -35,7 +36,8 @@ const useStyles = makeStyles(() => ({
     pageContent: {
         padding: '1em',
         flexGrow: 1,
-    }
+    },
+    toolbar: theme.mixins.toolbar,
 }));
 
 export default function Layout({ children, location }) {
@@ -56,7 +58,9 @@ export default function Layout({ children, location }) {
         <div className={classes.siteContainer}>
           <div className={classes.bodyContainer}>
             <Sidebar location={location} />
+
             <main className={classes.mainSection}>
+                <div className={classes.toolbar} />
                 <div className={classes.headerAndContent}>
                     <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
                     <div className={classes.pageContent}>{children}</div>

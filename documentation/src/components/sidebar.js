@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
   },
   treeNavigator: {
     margin: '10px',
+    padding: '10px',
   },
   image: {
     width: '100%',
@@ -41,6 +42,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
+  toolbar: theme.mixins.toolbar,
 }));
 
 const convertNodesToTree = items => {
@@ -118,9 +120,7 @@ export default function Sidebar() {
           }}
           anchor="left"
       >
-        <Link className={classes.logoSection} to="/">
-          <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />
-        </Link>
+        <div className={classes.toolbar} />
         <Divider />
         <div className={classes.treeNavigator}>
           <TreeNavigation treeItems={navigationTreeItems} />
@@ -128,4 +128,3 @@ export default function Sidebar() {
       </Drawer>
   );
 }
-
