@@ -23,8 +23,11 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
   },
   logoSection: {
-    margin: '10px',
-    height: '105px',
+    margin: '0 auto;',
+    padding: '10px',
+    display: 'block',
+    height: '65px',
+    width: '65px',
   },
   treeNavigator: {
     margin: '10px',
