@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `CodeceptJS E2E Framework Documentation Hub`,
+    title: `CodeceptJs BDD Documentation Hub`,
     description: `This framework contains Gherkin BDD Tests with CodeceptJS & uses Should.JS assertion library. Intgrated with Saucelabs to run on Multibrowsers in Parallel`,
     author: 'Kushang Gajjar'
   },

@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     width: '100%',
-    position: 'fixed',
+    position: 'static',
     bottom: 0,
     height: '60px',
     backgroundColor: '#f5f5f5'
@@ -54,16 +54,13 @@ export default function Footer() {
     <footer className={rootClassName}>
       <Grid container spacing={3}>
       <Grid item xs={3} ></Grid>
-        <Grid item xs={3} >
+        <Grid item xs={5} >
           <div className={classes.gridContent}>
             <span>Last updated on {getDateString()}&nbsp;&nbsp;</span>
-            <span>version: {getGitRepoVersion()}</span>
           </div>
         </Grid>
         <Grid item xs={3} >
-          <IconButton className={classes.gridContent} onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
-            <GithubIcon />
-          </IconButton>
+
         </Grid>
       </Grid>
     </footer>
