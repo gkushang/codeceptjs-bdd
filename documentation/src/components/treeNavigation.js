@@ -1,17 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import MailIcon from '@material-ui/icons/Mail';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Label from '@material-ui/icons/Label';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import InfoIcon from '@material-ui/icons/Info';
-import ForumIcon from '@material-ui/icons/Forum';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import TreeView from '@material-ui/lab/TreeView';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { navigate } from 'gatsby';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -42,6 +32,9 @@ const useTreeItemStyles = makeStyles(theme => ({
             paddingLeft: theme.spacing(2),
         },
     },
+    active: {
+        color: '#1a73e8'
+    },
     expanded: {},
     label: {
         fontWeight: 'inherit',
@@ -59,14 +52,14 @@ const useTreeItemStyles = makeStyles(theme => ({
         fontWeight: 'inherit',
         flexGrow: 1,
     },
+    selected: {
+        '&:focus': {
+            backgroundColor: 'red',
+        },
+    },
 }));
 
-const handleClick = function(event,treeItemData) {
-    event.preventDefault();
-    if (treeItemData.href) {
-        navigate(treeItemData.href);
-    }
-};
+
 const getLocalStorage = ()=> {
      const windowGlobal = typeof window !== 'undefined' && window;
      return windowGlobal.localStorage;
@@ -74,10 +67,19 @@ const getLocalStorage = ()=> {
 
 const getTreeItemsFromData = (treeItems) => {
 
-
     return treeItems.map(treeItemData => {
         let children = undefined;
         const classes = useTreeItemStyles();
+        const [selectedIndex, setSelectItem] = React.useState(1);
+
+        const handleClick = function(event,treeItemData) {
+            event.preventDefault();
+            setSelectItem(treeItemData.key);
+
+            if (treeItemData.href) {
+                navigate(treeItemData.href);
+            }
+        };
 
         if (treeItemData.children && treeItemData.children.length > 0) {
             children = getTreeItemsFromData(treeItemData.children);
@@ -88,7 +90,7 @@ const getTreeItemsFromData = (treeItems) => {
                 key={treeItemData.key}
                 nodeId={treeItemData.nodeId}
                 children={children}
-                onClick={ (e) => {handleClick(e,treeItemData)}}
+                onClick={ (e) => {handleClick(e,treeItemData)} }
                 label = {
                     <div className={classes.labelRoot}>
                         <Typography variant="body2" className={treeItemData.label}>
@@ -96,6 +98,7 @@ const getTreeItemsFromData = (treeItems) => {
                         </Typography>
                     </div>
                 }
+                selected={selectedIndex === treeItemData.key}
                 style={{
                     '--tree-view-color': '#1a73e8',
                     '--tree-view-bg-color': '#e8f0fe',
@@ -106,6 +109,7 @@ const getTreeItemsFromData = (treeItems) => {
                     expanded: classes.expanded,
                     group: classes.group,
                     label: classes.label,
+                    active: classes.selected
                 }}
             />
             );
