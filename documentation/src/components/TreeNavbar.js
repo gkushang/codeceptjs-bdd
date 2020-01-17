@@ -124,24 +124,6 @@ const getExpandedNodesFromLocalStorage = ()=>{
     return localStorage && JSON.parse(localStorage.getItem("codeceptjs:documentation:sidebar:docs"));
 };
 
-// export default function FileSystemNavigator({ treeItems }) {
-//
-//     const handleChange = (event, nodes) => {
-//         const localStorage = getLocalStorage();
-//         localStorage && localStorage.setItem("codeceptjs:documentation:sidebar:docs", JSON.stringify(nodes));
-//     };
-//     return (
-//         <TreeView
-//             defaultCollapseIcon={<ExpandMoreIcon />}
-//             defaultExpandIcon={<ChevronRightIcon />}
-//             defaultExpanded={getExpandedNodesFromLocalStorage()}
-//             onNodeToggle={handleChange}
-//         >
-//             {getTreeItemsFromData(treeItems)}
-//         </TreeView>
-//     );
-// }
-
 const useStyles = makeStyles({
     root: {
         height: 264,

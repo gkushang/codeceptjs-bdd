@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import slugify from 'slugify';
 
 import logo from '../images/codecept-e2e-logo.jpg';
-import TreeNavigation from './treeNavigation'
+import TreeNavigation from './TreeNavbar'
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';

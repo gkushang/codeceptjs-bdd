@@ -8,9 +8,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Footer from './footer';
-import Header from './header';
-import Sidebar from './sidebar';
+import Header from './Header';
+import Sidebar from './Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from "@material-ui/core/Drawer";
 
