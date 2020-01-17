@@ -24,7 +24,7 @@ const useTreeItemStyles = makeStyles(theme => ({
         fontWeight: theme.typography.fontWeightMedium,
         '$expanded > &': {
             fontWeight: theme.typography.fontWeightBold,
-            color: 'primary'
+            color: '#1976d2'
         },
     },
     group: {
@@ -32,9 +32,6 @@ const useTreeItemStyles = makeStyles(theme => ({
         '& $content': {
             paddingLeft: theme.spacing(2),
         },
-    },
-    active: {
-        color: '#1a73e8'
     },
     expanded: {},
     label: {

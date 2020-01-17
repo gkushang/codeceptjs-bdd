@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
     },
     pageContent: {
-        padding: '1em',
+        padding: '1em 3em',
         flexGrow: 1,
     },
     toolbar: theme.mixins.toolbar,
