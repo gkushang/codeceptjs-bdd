@@ -10,6 +10,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Link} from "gatsby";
 import logo from "../images/codecept-e2e-logo.jpg";
+import cucumberLogo from "../images/cucumber.png";
 import Drawer from "@material-ui/core/Drawer";
 
 const useStyles = makeStyles(theme => ({
@@ -33,7 +34,15 @@ const useStyles = makeStyles(theme => ({
   image: {
     width: '3%',
     height: '3%',
-    'margin-right': '10px'
+    'margin-right': '10px',
+    opacity: 0.9
+  },
+  cucumberImage: {
+    width: '3.4%',
+    height: '3.4%',
+    'margin-right': '10px',
+    'margin-left': '-30px',
+    zIndex:-1
   }
 }));
 
@@ -45,6 +54,7 @@ export default function Header({ siteTitle, siteDescription }) {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
               <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />
+              <img className={classes.cucumberImage} src={cucumberLogo} alt="cucumber logo" />
               <Typography variant="h6" className={classes.title}>
                 {siteTitle}
               </Typography>
@@ -60,7 +70,7 @@ export default function Header({ siteTitle, siteDescription }) {
               </Link>
             </Tooltip>
 
-            <Tooltip title="Github Repository">
+            <Tooltip title="Github RRRepository">
             <IconButton
                 aria-label="Go back to home page"
                 color="inherit"
