@@ -1,5 +1,5 @@
 ---
-title: CodeceptJS-Saucelabs
+title: Sauce Labs
 parents: ["Getting Started"]
 ---
 

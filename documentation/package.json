@@ -25,6 +25,7 @@
     "gatsby-transformer-json": "^2.2.22",
     "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.9",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.11.0",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
@@ -44,6 +45,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build && node ./scripts/deploy-github",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
