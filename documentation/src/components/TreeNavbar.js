@@ -84,6 +84,8 @@ const getTreeItemsFromData = (treeItems) => {
             }
         };
 
+        console.log('treeItemData::: ', treeItemData);
+        
         if (treeItemData.children && treeItemData.children.length > 0) {
             children = getTreeItemsFromData(treeItemData.children);
         }
@@ -105,6 +107,7 @@ const getTreeItemsFromData = (treeItems) => {
                 style={{
                     '--tree-view-color': '#1a73e8',
                     '--tree-view-bg-color': '#e8f0fe',
+                    cursor: 'pointer'
                 }}
                 classes={{
                     root: classes.root,

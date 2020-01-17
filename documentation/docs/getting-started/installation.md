@@ -1,9 +1,9 @@
 ---
-title: Sauce Labs
+title: Installation
+subTitle: Install required depedencies to get started with Codeceptjs BDD framework.
 parents: ["Getting Started"]
 ---
 
-> CodeceptJs Integration with Saucelabs. Ease of Configuration!
 
 * Easy to run tests on Saucelabs with command 
 

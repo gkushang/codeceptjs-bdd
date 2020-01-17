@@ -70,9 +70,9 @@ export default function Header({ siteTitle, siteDescription }) {
               </Link>
             </Tooltip>
 
-            <Tooltip title="Github RRRepository">
+            <Tooltip title="Github Repository">
             <IconButton
-                aria-label="Go back to home page"
+                aria-label="Home"
                 color="inherit"
                 onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
               <GitHubIcon style={{fill: "white", 'aria-label': "some"}}/>

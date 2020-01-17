@@ -12,10 +12,12 @@ const renderAst = new rehypeReact({
 
 export default function DocPage({ data, location }) {
   const post = data.markdownRemark;
+    console.log('post ======= ', post);
 
   return (
     <Layout title={post.frontmatter.title + ' | ' + data.site.siteMetadata.title} location={location}>
       <h1 id="article-title">{post.frontmatter.title}</h1>
+        <h1 id="article-title">{post.frontmatter.subTitle}</h1>
       <article className="doc-article">
         {renderAst(post.htmlAst)}
       </article>
