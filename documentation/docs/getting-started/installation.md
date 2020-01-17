@@ -4,11 +4,25 @@ subTitle: Install required depedencies to get started with Codeceptjs BDD framew
 parents: ["Getting Started"]
 ---
 
+# npm
+
+**asterisks**
+
+
+Inline `code` has `back-ticks around` it.
+
+```js
+
+//javascript is
+npm install
+yarn install
+
+```
 
 * Easy to run tests on Saucelabs with command 
 
-```bash
-  yarn acceptance --profile sauce:chrome
+```js
+yarn acceptance --profile sauce:chrome
 ```
 
 * Easy to run tests on Multibrowsers / Cross-Browsers. All tests in Parallel with command 

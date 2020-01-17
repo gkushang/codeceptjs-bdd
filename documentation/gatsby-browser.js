@@ -4,4 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+import "./src/global.css"
+
 // You can delete this file if you're not using it

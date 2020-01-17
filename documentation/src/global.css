@@ -1,0 +1,17 @@
+ pre {
+  background: #2b2b2b;
+  padding: 20px;
+   border: none;
+  overflow-x: auto;
+  font-family: Roboto Mono,monospace;
+     color: whitesmoke;
+     font-size: 18px;
+     font-weight: bold;
+     box-shadow: 2px 2px 2px lightgray;
+ }
+
+ pre .comment {
+     color: darkgray;
+     font-size: 16px;
+ }
+

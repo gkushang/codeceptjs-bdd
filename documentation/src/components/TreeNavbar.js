@@ -84,8 +84,6 @@ const getTreeItemsFromData = (treeItems) => {
             }
         };
 
-        console.log('treeItemData::: ', treeItemData);
-        
         if (treeItemData.children && treeItemData.children.length > 0) {
             children = getTreeItemsFromData(treeItemData.children);
         }
