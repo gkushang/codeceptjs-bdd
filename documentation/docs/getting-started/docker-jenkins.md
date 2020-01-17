@@ -1,6 +1,6 @@
 ---
 title: Docker & Jenkinsfile
-parents: ["Quick Start"]
+parents: ["Getting Started"]
 ---
 
 > Codecpetjs-e2e packed into the container with Node and Java. 

@@ -20,6 +20,8 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
+    backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[50]})`,
+    boxShadow: '1px 1px 8px lightgray',
     width: drawerWidth,
   },
   logoSection: {

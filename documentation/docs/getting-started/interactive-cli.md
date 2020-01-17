@@ -1,6 +1,6 @@
 ---
 title: Interactive CLI
-parents: ["Quick Start"]
+parents: ["Getting Started"]
 ---
 ## Get Started : Interactive CLI
 

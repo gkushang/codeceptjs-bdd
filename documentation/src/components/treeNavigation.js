@@ -14,7 +14,7 @@ const useTreeItemStyles = makeStyles(theme => ({
         '&:focus > $content': {
             backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[400]})`,
             color: 'var(--tree-view-color)',
-        },
+        }
     },
     content: {
         color: theme.palette.text.secondary,
@@ -23,7 +23,8 @@ const useTreeItemStyles = makeStyles(theme => ({
         paddingRight: theme.spacing(1),
         fontWeight: theme.typography.fontWeightMedium,
         '$expanded > &': {
-            fontWeight: theme.typography.fontWeightRegular,
+            fontWeight: theme.typography.fontWeightBold,
+            color: 'primary'
         },
     },
     group: {
@@ -39,11 +40,16 @@ const useTreeItemStyles = makeStyles(theme => ({
     label: {
         fontWeight: 'inherit',
         color: 'inherit',
+        fontSize: '0.97rem',
+        '$active > &': {
+            fontWeight: theme.typography.fontWeightBold,
+            color: 'blue'
+        },
     },
     labelRoot: {
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(0.5, 0),
+        padding: theme.spacing(1.0, 0),
     },
     labelIcon: {
         marginRight: theme.spacing(1),
@@ -56,7 +62,7 @@ const useTreeItemStyles = makeStyles(theme => ({
         '&:focus': {
             backgroundColor: 'red',
         },
-    },
+    }
 }));
 
 
@@ -93,7 +99,7 @@ const getTreeItemsFromData = (treeItems) => {
                 onClick={ (e) => {handleClick(e,treeItemData)} }
                 label = {
                     <div className={classes.labelRoot}>
-                        <Typography variant="body2" className={treeItemData.label}>
+                        <Typography variant="body2" className={classes.label}>
                             {treeItemData.label}
                         </Typography>
                     </div>

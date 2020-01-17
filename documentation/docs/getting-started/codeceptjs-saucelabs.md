@@ -1,6 +1,6 @@
 ---
 title: CodeceptJS-Saucelabs
-parents: ["Quick Start"]
+parents: ["Getting Started"]
 ---
 
 > CodeceptJs Integration with Saucelabs. Ease of Configuration!

@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     width: '100%',
-    position: 'static',
+    position: 'sticky',
     bottom: 0,
     height: '60px',
     backgroundColor: '#f5f5f5'

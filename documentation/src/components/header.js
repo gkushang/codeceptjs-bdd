@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import HomeIcon from '@material-ui/icons/Home';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Link} from "gatsby";
 import logo from "../images/codecept-e2e-logo.jpg";
@@ -27,12 +28,13 @@ const useStyles = makeStyles(theme => ({
   logoSection: {
     height: '65px',
     width: '65px',
+
   },
   image: {
     width: '3%',
     height: '3%',
     'margin-right': '10px'
-  },
+  }
 }));
 
 export default function Header({ siteTitle, siteDescription }) {
@@ -43,17 +45,33 @@ export default function Header({ siteTitle, siteDescription }) {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
               <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />
-            <Typography variant="h6" className={classes.title}>
-              {siteTitle}
-            </Typography>
+              <Typography variant="h6" className={classes.title}>
+                {siteTitle}
+              </Typography>
+
+            <Tooltip title="Go to Home">
+              <Link to="/">
+              <IconButton
+                  aria-label="Go back to home page"
+                  color="inherit"
+                  >
+                <HomeIcon style={{fill: "white", 'aria-label': "some"}}/>
+              </IconButton>
+              </Link>
+            </Tooltip>
+
             <Tooltip title="Github Repository">
-            <IconButton className={classes.gridContent}
-                        onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
+            <IconButton
+                aria-label="Go back to home page"
+                color="inherit"
+                onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
               <GitHubIcon style={{fill: "white", 'aria-label': "some"}}/>
             </IconButton>
             </Tooltip>
+
           </Toolbar>
-        </AppBar>
+
+      </AppBar>
       </div>
   );
 };

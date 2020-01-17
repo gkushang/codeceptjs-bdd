@@ -65,7 +65,7 @@ export default function Layout({ children, location }) {
                     <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
                     <div className={classes.pageContent}>{children}</div>
                 </div>
-              <Footer />
+              {/*<Footer />*/}
             </main>
           </div>
         </div>

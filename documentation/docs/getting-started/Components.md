@@ -1,6 +1,6 @@
 ---
-title: CodeceptJS-Cucumber
-parents: ["Quick Start"]
+title: Support
+parents: ["Getting Started"]
 ---
 
 > CodeceptJS E2E Framework with Cucumber and Saucelabs Integration
