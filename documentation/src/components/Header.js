@@ -15,7 +15,6 @@ import logo from "../images/codecept-e2e-logo.jpg";
 import cucumberLogo from "../images/cucumber.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
-
 import Hidden from '@material-ui/core/Hidden';
 
 const drawerWidth = 240;
@@ -31,15 +30,15 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-    // zIndex: theme.zIndex.drawer + 1
+    // [theme.breakpoints.up('sm')]: {
+    //   width: `calc(100% - ${drawerWidth}px)`,
+    //   marginLeft: drawerWidth,
+    // },
+    zIndex: theme.zIndex.drawer + 1
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
   },
@@ -101,48 +100,44 @@ function Header({ siteTitle, siteDescription }, props) {
         <CssBaseline />
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
-            <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                className={classes.menuButton}
-            >
+            <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
               <MenuIcon />
             </IconButton>
+
+            <Hidden smDown>
               <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />
               <img className={classes.cucumberImage} src={cucumberLogo} alt="cucumber logo" />
               <Typography variant="h6" className={classes.title}>
-                {siteTitle}
+                Codeceptjs BDD Framework Documentation Hub
               </Typography>
+            </Hidden>
 
-            <Tooltip title="Go to Homee">
+            <Hidden mdUp>
+              <Typography variant="h6" className={classes.title}>
+                Codeceptjs BDD
+              </Typography>
+            </Hidden>
+
+            <Tooltip title="Go to Home">
               <Link to="/">
-              <IconButton
-                  aria-label="Go back to home page"
-                  color="inherit"
-                  >
-                <HomeIcon style={{fill: "white", 'aria-label': "some"}}/>
-              </IconButton>
+                <IconButton aria-label="Go to home page" color="inherit">
+                  <HomeIcon style={{fill: "white"}}/>
+                </IconButton>
               </Link>
             </Tooltip>
 
-            <Tooltip title="Github RRepository">
-            <IconButton
-                aria-label="Home"
-                color="inherit"
+            <Tooltip title="Github Repository">
+            <IconButton aria-label="Github Repository" color="inherit" edge="end"
                 onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
-              <GitHubIcon style={{fill: "white", 'aria-label': "some"}}/>
+              <GitHubIcon style={{fill: "white"}}/>
             </IconButton>
             </Tooltip>
-
           </Toolbar>
-
       </AppBar>
 
         <nav className={classes.drawer} aria-label="mailbox folders">
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation="css">
+          <Hidden mdUp implementation="css">
             <Drawer
                 container={container}
                 variant="temporary"
@@ -159,7 +154,7 @@ function Header({ siteTitle, siteDescription }, props) {
               <Sidebar location={location} />
             </Drawer>
           </Hidden>
-          <Hidden xsDown implementation="css">
+          <Hidden smDown implementation="css">
             <Drawer
                 classes={{
                   paper: classes.drawerPaper,

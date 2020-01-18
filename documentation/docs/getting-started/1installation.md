@@ -1,7 +1,7 @@
 ---
 title: Installation
 subTitle: Install required depedencies to get started with Codeceptjs BDD framework.
-parents: ["Getting Started"]
+parents: ["Getting Started Again"]
 ---
 
 # npm
@@ -14,7 +14,7 @@ Inline `code` has `back-ticks around` it.
 ```js
 
 //javascript is
-npm install adfasdfa sdfasdfasdfasd fasfasdfasd fasfasdfasd fasdfasdfasd fasdf as
+npm install
 yarn install
 
 ```

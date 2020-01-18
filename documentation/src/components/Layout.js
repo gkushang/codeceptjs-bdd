@@ -12,6 +12,8 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from "@material-ui/core/Drawer";
+import Typography from "@material-ui/core/Typography";
+const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -37,6 +39,14 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
     },
     toolbar: theme.mixins.toolbar,
+    content: {
+        [theme.breakpoints.up('sm')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+        },
+        flexGrow: 1,
+        padding: theme.spacing(3),
+    },
 }));
 
 export default function Layout({ children, location }) {
@@ -62,7 +72,9 @@ export default function Layout({ children, location }) {
                 <div className={classes.toolbar} />
                 <div className={classes.headerAndContent}>
                     <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} props={location}/>
-                    <div className={classes.pageContent}>{children}</div>
+                    <main className={classes.content}>
+                        <Typography paragraph>{children}</Typography>
+                    </main>
                 </div>
               {/*<Footer />*/}
             </main>
