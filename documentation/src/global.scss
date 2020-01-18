@@ -27,4 +27,19 @@ code {
   padding: 0.2em 0.5em !important;
 }
 
+.anchor.before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  padding-right: 4px;
+}
+
+.main-body a.anchor {
+  color: inherit;
+  fill: #b17acc;
+  text-decoration: none;
+  border-bottom: none;
+}
+
 

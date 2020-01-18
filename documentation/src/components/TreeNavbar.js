@@ -12,7 +12,7 @@ const useTreeItemStyles = makeStyles(theme => ({
     root: {
         color: theme.palette.text.secondary,
         '&:focus > $content': {
-            backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[400]})`,
+            backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[200]})`,
             color: 'var(--tree-view-color)',
         }
     },
@@ -33,14 +33,14 @@ const useTreeItemStyles = makeStyles(theme => ({
             paddingLeft: theme.spacing(2),
         },
     },
-    expanded: {},
+    expanded: {
+    },
     label: {
         fontWeight: 'inherit',
-        color: 'inherit',
-        fontSize: '0.97rem',
+        color: '#1976d2',
+        fontSize: '0.98rem',
         '$active > &': {
             fontWeight: theme.typography.fontWeightBold,
-            color: 'blue'
         },
     },
     labelRoot: {
@@ -54,11 +54,6 @@ const useTreeItemStyles = makeStyles(theme => ({
     labelText: {
         fontWeight: 'inherit',
         flexGrow: 1,
-    },
-    selected: {
-        '&:focus': {
-            backgroundColor: 'red',
-        },
     }
 }));
 
@@ -78,7 +73,6 @@ const getTreeItemsFromData = (treeItems) => {
         const handleClick = function(event,treeItemData) {
             event.preventDefault();
             setSelectItem(treeItemData.key);
-
             if (treeItemData.href) {
                 navigate(treeItemData.href);
             }

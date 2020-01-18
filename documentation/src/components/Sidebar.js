@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawer: theme.mixins.toolbar,
   drawerPaper: {
-    backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[50]})`,
+    backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[200]})`,
     boxShadow: '1px 1px 8px lightgray',
     width: drawerWidth,
   },

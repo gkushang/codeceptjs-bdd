@@ -1,10 +1,10 @@
 ---
 title: Installation
-subTitle: Install required depedencies to get started with Codeceptjs BDD framework.
+sub_title: Install required dependencies to setup CodeceptJs BDD Framework
 parents: ["Getting Started"]
 ---
 
-# npm
+## npm
 
 **asterisks**
 

@@ -2,7 +2,9 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import rehypeReact from 'rehype-react';
 import Layout from '../components/Layout';
+import Divider from '@material-ui/core/Divider';
 import {makeStyles} from "@material-ui/core";
+
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles(theme => ({
@@ -37,7 +39,6 @@ const renderAst = new rehypeReact({
 export default function DocPage({data, location}) {
     const classes = useStyles();
     const post = data.markdownRemark;
-    console.log('location:: ', location);
 
     return (
         <Layout title={post.frontmatter.title + ' | ' + data.site.siteMetadata.title} location={location}>
@@ -45,20 +46,11 @@ export default function DocPage({data, location}) {
                 {post.frontmatter.title}
             </Typography>
             <Typography variant="h6" className={classes.subTitle} gutterBottom>
-                {post.frontmatter.subTitle}
+                {post.frontmatter.sub_title}
             </Typography>
+            <Divider/>
             <Typography variant="body1" gutterBottom>
                 {renderAst(post.htmlAst)}
-                {/*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt*/}
-                {/*ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum*/}
-                {/*facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit*/}
-                {/*gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id*/}
-                {/*donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit*/}
-                {/*adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.*/}
-                {/*Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis*/}
-                {/*imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget*/}
-                {/*arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem*/}
-                {/*donec massa sapien faucibus et molestie ac.*/}
             </Typography>
         </Layout>
     )
@@ -75,7 +67,7 @@ export const query = graphql`
       htmlAst
       frontmatter {
         title
-        subTitle
+        sub_title
       }
     }
   }
