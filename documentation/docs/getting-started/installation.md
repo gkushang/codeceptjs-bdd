@@ -8,13 +8,11 @@ parents: ["Getting Started"]
 
 **asterisks**
 
-
 Inline `code` has `back-ticks around` it.
 
 ```js
-
 //javascript is
-npm install adfasdfa sdfasdfasdfasd fasfasdfasd fasfasdfasd fasdfasdfasd fasdf as
+npm install adfaaaaaaasdfa sdfasdfasdfasd fasfasdfasd fasfasdfasd fasdfasdfasd fasdf as
 yarn install
 
 ```
@@ -22,13 +20,13 @@ yarn install
 * Easy to run tests on Saucelabs with command 
 
 ```js
-yarn acceptance --profile sauce:chrome
+yarn aaaaaaaa --profile sauce:chrome
 ```
 
 * Easy to run tests on Multibrowsers / Cross-Browsers. All tests in Parallel with command 
 
-```bash
-  yarn acceptance:multibrowsers --profile sauce:chrome,ie,safari
+```jsx harmony
+yarn acceptance:multibrowsers --profile sauce:chrome,ie,safari
 ```
 
 To get started, follow the instructions on [codeceptjs-saucelabs](https://github.com/gkushang/codeceptjs-e2e/tree/master/packages/codeceptjs-saucelabs)

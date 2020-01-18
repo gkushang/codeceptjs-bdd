@@ -1,0 +1,30 @@
+$code-background-color: #690147;
+$code-font-color: #ffe4a1;
+
+.gatsby-highlight {
+  font-family: monospace, monospace !important;
+  background-color: $code-background-color;
+  border-radius: 0.3em;
+  margin: 0.8em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left;
+  min-width: 100%;
+  max-width: 100px;
+}
+
+code {
+  color: $code-font-color !important;
+  background-color: $code-background-color !important;
+  font-family: monospace, monospace !important;
+  padding: 0.2em 0.5em !important;
+}
+
+
