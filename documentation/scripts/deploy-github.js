@@ -7,6 +7,6 @@ ghpages.publish(
         repo: 'git@github.com:gkushang/gkushang.github.io.git',
     },
     () => {
-        console.log('\nPublished Successfully to https://gkushang.github.io !');
+        console.log('\n>>>> Successfully Published to https://gkushang.github.io.');
     }
 );

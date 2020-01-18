@@ -56,12 +56,12 @@ export default function Layout({ children, location }) {
       render={data => (
         <div className={classes.siteContainer}>
           <div className={classes.bodyContainer}>
-            <Sidebar location={location} />
+            {/*<Sidebar location={location} />*/}
 
             <main className={classes.mainSection}>
                 <div className={classes.toolbar} />
                 <div className={classes.headerAndContent}>
-                    <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
+                    <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} props={location}/>
                     <div className={classes.pageContent}>{children}</div>
                 </div>
               {/*<Footer />*/}

@@ -3,11 +3,13 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import slugify from 'slugify';
 
-import logo from '../images/codecept-e2e-logo.jpg';
 import TreeNavigation from './TreeNavbar'
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
+import Toolbar from "@material-ui/core/Toolbar";
+import logo from "../images/codecept-e2e-logo.jpg";
+import cucumberLogo from "../images/cucumber.png";
 
 const drawerWidth = 240;
 
@@ -15,29 +17,31 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
+  drawer: theme.mixins.toolbar,
   drawerPaper: {
     backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[50]})`,
     boxShadow: '1px 1px 8px lightgray',
     width: drawerWidth,
   },
   logoSection: {
-    margin: '0 auto;',
-    padding: '10px',
-    display: 'block',
-    height: '65px',
-    width: '65px',
+    margin: '10px',
+    height: '105px',
   },
   treeNavigator: {
     margin: '10px',
     padding: '10px',
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: '30%',
+    height: '50%',
+    'margin-right': '-30px',
+    opacity: 0.9
+  },
+  cucumberImage: {
+    width: '30%',
+    height: '50%',
+    'margin-left': '-30px',
+    zIndex:-1
   },
   content: {
     flexGrow: 1,
@@ -115,7 +119,7 @@ export default function Sidebar() {
   const classes = useStyles();
   return (
       <Drawer
-          className={classes.drawer}
+          className={classes.toolbar}
           variant="permanent"
           classes={{
             paper: classes.drawerPaper,
@@ -123,6 +127,12 @@ export default function Sidebar() {
           anchor="left"
       >
         <div className={classes.toolbar} />
+
+        {/*<Link className={classes.logoSection} to="/">*/}
+        {/*  <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />*/}
+        {/*  <img className={classes.cucumberImage} src={cucumberLogo} alt="cucumber logo" />*/}
+        {/*</Link>*/}
+
         <Divider />
         <div className={classes.treeNavigator}>
           <TreeNavigation treeItems={navigationTreeItems} />
