@@ -6,20 +6,25 @@ parents: ["Getting Started"]
 
 ## Interactive CLI
 
-This framework provides an Interactive CLI to setup the framework in Two Steps. 
+This framework provides an Interactive CLI to setup the framework in just two steps. 
 
-The CLI setup the framework, install all required dependencies, integrate Sauce Labs with your framework. This Framework comes with the sample BDD Cucumber scenarios. Once setup is done, the CLI will also run the sample test to test your setup.
+The CLI,
+1. Creates a Codeceptjs BDD Framework for your App
+2. Automatically updates your `package.json` with all required dependencies.
+3. Installs all dependencies as part of setup process
+4. Configures Sauce Labs (optional)
+5. Runs existing Sample BDD Feature Files to test your entire setup
 
-1. Launch CLI
-2. Follow instructions on CLI
+This Framework comes with the Sample BDD Feature files with examples.
 
-```js
- cd codeceptjs-e2e/packages/codeceptjs-cucumber
-  yarn
-  npm run cli
+### Setup Framework
 
-//follow the instructions on CLI
+Below steps assumes you have already installed all the required dependencies.
+
+```bash
+   cd codeceptjs-e2e/packages/codeceptjs-cucumber
+    yarn
+    npm run cli
 ```
 
-The above step assumes you have installed all the required dependencies. 
 

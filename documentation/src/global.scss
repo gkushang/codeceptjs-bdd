@@ -1,6 +1,11 @@
 $code-background-color: #313131;
 $code-font-color: #EFEFEF;
 
+.MuiTypography-body1 {
+  color: #414141 !important;
+  letter-spacing: 0.4px;
+}
+
 .gatsby-highlight {
   font-family: monospace, monospace !important;
   background-color: $code-background-color;
