@@ -3,8 +3,9 @@ title: Setup Framework
 sub_title: Setup Codeceptjs-BDD Framework for your app
 parents: ["Getting Started"]
 ---
+<br/>
 
-## Interactive CLI
+## 🔳 Interactive CLI
 
 This framework provides an Interactive CLI to setup the framework in just two steps. 
 
@@ -18,7 +19,9 @@ The CLI,
 
 This Framework comes with the Sample BDD Feature files with examples. Please follow through the [Examples](https://github.com/gkushang/codeceptjs-bdd/tree/develop/packages/codeceptjs-cucumber/acceptance/features) to create your own Feature Files & Scenarios.
 
-### Quick Setup
+<br/>
+
+## 🚀 Quick Setup
 
 Below steps assumes you have already installed all the required dependencies from `Getting Started > Installation`
 
@@ -28,4 +31,5 @@ Below steps assumes you have already installed all the required dependencies fro
     npm run cli
 ```
 
+💯Follow the instructions on CLI. Once done, you're ready to start writing automated Feature files for your app 🎉
 
