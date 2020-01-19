@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import slugify from 'slugify';
-
 import TreeNavigation from './TreeNavbar'
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
+
 const drawerWidth = 240;
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -122,11 +123,6 @@ export default function Sidebar() {
           anchor="left"
       >
         <div className={classes.toolbar} />
-
-        {/*<Link className={classes.logoSection} to="/">*/}
-        {/*  <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />*/}
-        {/*  <img className={classes.cucumberImage} src={cucumberLogo} alt="cucumber logo" />*/}
-        {/*</Link>*/}
 
         <Divider />
         <div className={classes.treeNavigator}>
