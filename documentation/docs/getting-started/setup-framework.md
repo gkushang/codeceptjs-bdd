@@ -12,14 +12,15 @@ The CLI,
 1. Creates a Codeceptjs BDD Framework for your App
 2. Automatically updates your `package.json` with all required dependencies.
 3. Installs all dependencies as part of setup process
-4. Configures Sauce Labs (optional)
-5. Runs existing Sample BDD Feature Files to test your entire setup
+4. Adds Master Configuration
+5. Configures Sauce Labs (optional)
+6. Runs existing Sample BDD Feature Files to test your setup
 
-This Framework comes with the Sample BDD Feature files with examples.
+This Framework comes with the Sample BDD Feature files with examples. Please follow through the [Examples](https://github.com/gkushang/codeceptjs-bdd/tree/develop/packages/codeceptjs-cucumber/acceptance/features) to create your own Feature Files & Scenarios.
 
-### Setup Framework
+### Quick Setup
 
-Below steps assumes you have already installed all the required dependencies.
+Below steps assumes you have already installed all the required dependencies from `Getting Started > Installation`
 
 ```bash
    cd codeceptjs-bdd/packages/codeceptjs-cucumber
