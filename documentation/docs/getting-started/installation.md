@@ -4,30 +4,27 @@ sub_title: Install required dependencies to setup CodeceptJs BDD Framework
 parents: ["Getting Started"]
 ---
 
-## npm
+## yarn
 
-**asterisks**
-
-Inline `code` has `back-ticks around` it.
+You can install Yarn through the [Homebrew package manager](https://brew.sh/). This will also install Node.js if it is not already installed.
 
 ```js
-//javascript is
-npm install adfaaaaaaasdfa sdfasdfasdfasd fasfasdfasd fasfasdfasd fasdfasdfasd fasdf as
-yarn install
-
+brew install yarn
 ```
 
-* Easy to run tests on Saucelabs with command 
+## codeceptjs-bdd
+
+Clone Codeceptjs-BDD framework libraries for getting started
 
 ```js
-yarn aaaaaaaa --profile sauce:chrome
+git clone https://github.com/gkushang/codeceptjs-e2e.git
 ```
 
-* Easy to run tests on Multibrowsers / Cross-Browsers. All tests in Parallel with command 
+## lerna
 
-```jsx harmony
-yarn acceptance:multibrowsers --profile sauce:chrome,ie,safari
+Install Lerna through the [Lerna](https://lerna.js.org/).
+
+```js
+yarn add lerna
 ```
-
-To get started, follow the instructions on [codeceptjs-saucelabs](https://github.com/gkushang/codeceptjs-e2e/tree/master/packages/codeceptjs-saucelabs)
 
