@@ -1,19 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './Header';
-import Sidebar from './Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from "@material-ui/core/Drawer";
 import Typography from "@material-ui/core/Typography";
-const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -40,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     },
     toolbar: theme.mixins.toolbar,
     content: {
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
         },

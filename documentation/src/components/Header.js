@@ -17,8 +17,6 @@ import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from '@material-ui/core/Hidden';
 
-const drawerWidth = 240;
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -30,10 +28,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
-    // [theme.breakpoints.up('sm')]: {
-    //   width: `calc(100% - ${drawerWidth}px)`,
-    //   marginLeft: drawerWidth,
-    // },
     zIndex: theme.zIndex.drawer + 1
   },
   menuButton: {
@@ -51,18 +45,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3),
   },
 
-  // root: {
-  //   display: 'flex'
-  // },
-  // appBar: {
-  //   zIndex: theme.zIndex.drawer + 1,
-  // },
-  // menuButton: {
-  //   marginRight: theme.spacing(2),
-  //   [theme.breakpoints.up('sm')]: {
-  //     display: 'none',
-  //   }
-  // },
   title: {
     flexGrow: 1,
   },

@@ -1,7 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import GithubIcon from '@material-ui/icons/GitHub';
-import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import clsx from 'clsx';
 
@@ -42,7 +40,6 @@ function getDateString() {
 }
 
 function getGitRepoVersion() {
-  // TODO: dynamically get version.
   return '1.0.0';
 }
 

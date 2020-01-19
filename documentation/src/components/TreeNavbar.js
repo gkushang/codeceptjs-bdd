@@ -7,7 +7,6 @@ import { navigate } from 'gatsby';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-
 const useTreeItemStyles = makeStyles(theme => ({
     root: {
         color: theme.palette.text.secondary,
