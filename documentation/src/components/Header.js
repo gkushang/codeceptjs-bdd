@@ -16,7 +16,7 @@ import cucumberLogo from "../images/cucumber.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from '@material-ui/core/Hidden';
-
+const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',

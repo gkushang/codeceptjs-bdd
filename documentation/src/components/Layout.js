@@ -2,10 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-
 import Header from './Header';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
+
+const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -58,8 +59,6 @@ export default function Layout({ children, location }) {
       render={data => (
         <div className={classes.siteContainer}>
           <div className={classes.bodyContainer}>
-            {/*<Sidebar location={location} />*/}
-
             <main className={classes.mainSection}>
                 <div className={classes.toolbar} />
                 <div className={classes.headerAndContent}>
@@ -68,7 +67,6 @@ export default function Layout({ children, location }) {
                         <Typography paragraph>{children}</Typography>
                     </main>
                 </div>
-              {/*<Footer />*/}
             </main>
           </div>
         </div>
