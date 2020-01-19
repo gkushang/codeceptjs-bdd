@@ -84,8 +84,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `CodeceptJS E2E Framework Documentation Hub`,
-        short_name: `CodeceptJS E2E Framework`,
+        name: `CodeceptJS BDD Framework Documentation Hub`,
+        short_name: `CodeceptJS BDD Framework`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,

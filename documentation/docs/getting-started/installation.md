@@ -10,7 +10,7 @@ Clone Codeceptjs-BDD framework libraries for getting started
 
 ```bash
 
-    git clone https://github.com/gkushang/codeceptjs-e2e.git
+    git clone https://github.com/gkushang/codeceptjs-bdd.git
 
 ```
 

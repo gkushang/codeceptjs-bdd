@@ -16,6 +16,7 @@ import cucumberLogo from "../images/cucumber.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from '@material-ui/core/Hidden';
+
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -110,7 +111,7 @@ function Header({ siteTitle, siteDescription }, props) {
 
             <Tooltip title="Github Repository">
             <IconButton aria-label="Github Repository" color="inherit" edge="end"
-                onClick={() => {window.open('https://github.com/gkushang/codeceptjs-e2e', '_blank');}}>
+                onClick={() => {window.open('https://github.com/gkushang/codeceptjs-bdd', '_blank');}}>
               <GitHubIcon style={{fill: "white"}}/>
             </IconButton>
             </Tooltip>

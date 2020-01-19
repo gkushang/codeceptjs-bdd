@@ -22,7 +22,7 @@ This Framework comes with the Sample BDD Feature files with examples.
 Below steps assumes you have already installed all the required dependencies.
 
 ```bash
-   cd codeceptjs-e2e/packages/codeceptjs-cucumber
+   cd codeceptjs-bdd/packages/codeceptjs-cucumber
     yarn
     npm run cli
 ```
