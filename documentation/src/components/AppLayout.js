@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from './Header';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from "@material-ui/core/Typography";
 
 const drawerWidth = 240;
 
@@ -42,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function Layout({ children, location }) {
+export default function AppLayout({ children, location }) {
     const classes = useStyles();
   return (
     <StaticQuery
@@ -64,7 +63,7 @@ export default function Layout({ children, location }) {
                 <div className={classes.headerAndContent}>
                     <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} props={location}/>
                     <main className={classes.content}>
-                        <Typography paragraph>{children}</Typography>
+                        {children}
                     </main>
                 </div>
             </main>
@@ -75,7 +74,6 @@ export default function Layout({ children, location }) {
   );
 }
 
-Layout.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node.isRequired,
+AppLayout.propTypes = {
+  title: PropTypes.string
 };

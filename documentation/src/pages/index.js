@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import AppLayout from "../components/AppLayout"
 
 const IndexPage = () => (
-  <Layout>
+  <AppLayout>
 
-  </Layout>
+  </AppLayout>
 );
 
 export default IndexPage

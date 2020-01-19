@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import rehypeReact from 'rehype-react';
-import Layout from '../components/Layout';
+import AppLayout from '../components/AppLayout';
 import Divider from '@material-ui/core/Divider';
 import {makeStyles} from "@material-ui/core";
 
@@ -41,7 +41,7 @@ export default function DocPage({data, location}) {
     const post = data.markdownRemark;
 
     return (
-        <Layout title={post.frontmatter.title + ' | ' + data.site.siteMetadata.title} location={location}>
+        <AppLayout title={post.frontmatter.title + ' | ' + data.site.siteMetadata.title} location={location}>
             <Typography variant="h4" className={classes.title} gutterBottom>
                 {post.frontmatter.title}
             </Typography>
@@ -52,7 +52,7 @@ export default function DocPage({data, location}) {
             <Typography variant="body1" gutterBottom>
                 {renderAst(post.htmlAst)}
             </Typography>
-        </Layout>
+        </AppLayout>
     )
 }
 
