@@ -38,5 +38,5 @@ Below steps assumes you have already installed all the required dependencies fro
 
 ### 🎥 Watch Quick Setup in Action
 
-[![Codeceptjs Quick Setup](https://i.postimg.cc/nLbgq3qj/codeceptjs-quicksetup.png)](https://www.youtube.com/watch?v=2iFeX1JIpJw&feature=youtu.be)
+[![Codeceptjs Quick Setup](https://i.postimg.cc/DZ15ztxk/Screen-Shot-2020-01-20-at-2-53-19-PM.png)](https://youtu.be/OGrn1ejyb-k)
 
