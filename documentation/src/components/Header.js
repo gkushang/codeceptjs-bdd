@@ -109,9 +109,11 @@ function Header({ siteTitle, siteDescription }, props) {
               </Hidden>
 
               <Hidden mdUp>
+              <Link href="/" className={classes.title}>
                 <Typography variant="h6" className={classes.title}>
                   Codeceptjs BDD
                 </Typography>
+                </Link>
               </Hidden>
             
             <Tooltip title="Go to Home">
