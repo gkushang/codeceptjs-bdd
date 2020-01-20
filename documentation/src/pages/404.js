@@ -1,10 +1,31 @@
 import React from "react"
 import AppLayout from "../components/AppLayout"
+import image404 from "../images/404-1.png";
+import Grid from '@material-ui/core/Grid';
+
+const imageStyle = {
+  // position:'absolute',
+  padding: 10,
+  width: '100%',
+  height: '100%'
+}
+
+const imageSt = {
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'block',
+  width: '60%',
+  height: '60%'
+}
 
 const NotFoundPage = () => (
   <AppLayout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Grid item xs={12}>
+      <div style={ imageStyle }>
+        <img style={imageSt} src={image404} alt="Not Found"/>
+      </div>
+    </Grid>
+
   </AppLayout>
 );
 
