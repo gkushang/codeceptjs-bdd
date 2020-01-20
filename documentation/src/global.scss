@@ -4,6 +4,9 @@ $code-font-color: #EFEFEF;
 .MuiTypography-body1 {
   color: #414141 !important;
   letter-spacing: 0.5px;
+  img {
+    width: 100% !important;
+  }  
 }
 
 .gatsby-highlight {
