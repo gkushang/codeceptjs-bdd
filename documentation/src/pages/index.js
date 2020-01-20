@@ -3,6 +3,9 @@ import AppLayout from "../components/AppLayout";
 import AppCard from "../components/AppCard";
 import codeceptjsBddFrameworkImage from "../images/codeceptbdd-arc.png";
 import BDD from "../images/BDD.png";
+import autoRetry from "../images/autoRetry.png";
+import quickSetupImage from "../images/quickSetup.png";
+import pluginBasedImage from "../images/plugin-based.png";
 import cucumber from "../images/cucumber1.png";
 import multibrowsers from "../images/multibrowsers.png";
 import saucelabs from "../images/saucelabs1.png";
@@ -79,8 +82,10 @@ const IndexPage = () => {
       Codeceptjs-BDD makes acceptance and regression testing of modern web apps faster, more collaborative and easier to scale.
     </Typography>
     
-    <Grid container spacing={5} className={classes.arch}>
-        <Grid item sm={3}>
+
+      <Grid container spacing={5} className={classes.arch}>
+
+      <Grid item sm={4}>
           <AppCard 
           title="Why BDD?" 
           description="BDD is a great way to colloborate within teams & with stakeholders to create shared understanding of how the product should behave, capture concrete examples and create an executable & living specification on-the-fly."  
@@ -88,6 +93,24 @@ const IndexPage = () => {
           image={BDD}/>
         </Grid>
 
+        <Grid item sm={4}>
+          <AppCard 
+          title="Reduced Flakiness" 
+          description="Codeceptjs has in-build functionality to auto-rety the failed steps at configurabe interval. Codeceptjs-BDD framework has configured auto-retry to reduce the Flakiness in UI Tests."  
+          link="https://codecept.io/plugins/#retryfailedstep" 
+          image={autoRetry}/>
+        </Grid>
+
+        <Grid item sm={4}>
+        <AppCard 
+          title="Interactive CLI" 
+          description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly start with the UI Automated Tests. Watch the Video here."  
+          link="https://youtu.be/OGrn1ejyb-k" 
+          image={quickSetupImage}/>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={5} className={classes.arch}>
         <Grid item sm={3}>
           <AppCard 
           title="Write Feature Files" 
@@ -105,6 +128,15 @@ const IndexPage = () => {
         </Grid>
 
         <Grid item sm={3}>
+          <AppCard 
+          title="Plugin Based Architecture" 
+          description="CodeceptJs-BDD implements and packages the plugins to reuse shared configuration and sauce labs api's: codecpetjs-shared, codeceptjs-saucelabs."  
+          link="https://github.com/gkushang/codeceptjs-bdd/tree/develop/packages" 
+          image={pluginBasedImage}/>
+        </Grid>
+
+
+        <Grid item sm={3}>
         <AppCard 
           title="Multi Browsers in Parallel" 
           description="CodeceptJs BDD provides an ability to run BDD Feaure files all in Parallel on Single browser or run same set of tests in Parallel but on different browsers/OS combo on Sauce Labs."  
@@ -112,6 +144,7 @@ const IndexPage = () => {
           image={multibrowsers}/>
         </Grid>
       </Grid>
+
 
       <Grid item xs={12} className={classes.arch}>
         <Card className={classes.card}>
