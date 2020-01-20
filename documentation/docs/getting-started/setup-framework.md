@@ -40,5 +40,3 @@ Below steps assumes you have already installed all the required dependencies fro
 
 <a href='https://youtu.be/OGrn1ejyb-k' target='_blank'><img src='https://i.postimg.cc/DZ15ztxk/Screen-Shot-2020-01-20-at-2-53-19-PM.png' border='0' alt='BDD'/></a>
 
-[![Codeceptjs Quick Setup](https://i.postimg.cc/DZ15ztxk/Screen-Shot-2020-01-20-at-2-53-19-PM.png target="_blank")](https://youtu.be/OGrn1ejyb-k)
-
