@@ -23,13 +23,20 @@ This Framework comes with the Sample BDD Feature files with examples. Please fol
 
 ## 🚀 Quick Setup
 
-Below steps assumes you have already installed all the required dependencies from `Getting Started > Installation`
+Below steps assumes you have already installed all the required dependencies from _Getting Started > Installation_
 
 ```bash
-   cd codeceptjs-bdd/packages/codeceptjs-cucumber
+
+   git clone https://github.com/gkushang/codeceptjs-bdd.git
+    cd codeceptjs-bdd/packages/codeceptjs-cucumber
     yarn
     npm run cli
+
 ```
 
 💯Follow the instructions on CLI. Once done, you're ready to start writing automated Feature files for your app 🎉
+
+### 🎥 Watch Quick Setup in Action
+
+[![Codeceptjs Quick Setup](https://i.postimg.cc/nLbgq3qj/codeceptjs-quicksetup.png)](https://www.youtube.com/watch?v=2iFeX1JIpJw&feature=youtu.be)
 
