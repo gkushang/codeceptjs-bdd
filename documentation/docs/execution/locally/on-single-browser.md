@@ -1,6 +1,6 @@
 ---
 title: On Single Browser
-sub_title: Install required dependencies to setup CodeceptJs BDD Framework
+sub_title: Execute features on Single browser locally
 parents: ["Execution", "Locally"]
 ---
 

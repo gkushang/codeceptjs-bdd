@@ -5,7 +5,7 @@ parents: ["Getting Started"]
 ---
 <br/>
 
-# 💎 codeceptjs-bdd
+# ⏳ codeceptjs-bdd
 
 Clone Codeceptjs-BDD framework libraries for getting started
 

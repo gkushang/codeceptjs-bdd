@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Link} from "gatsby";
 import logo from "../images/codecept-e2e-logo.jpg";
-import cucumberLogo from "../images/cucumber.png";
+import cucumberLogo from "../images/cucumber-logo.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from '@material-ui/core/Hidden';

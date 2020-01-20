@@ -1,6 +1,6 @@
 ---
 title: On Single Browser
-sub_title: Install required dependencies to setup CodeceptJs BDD Framework
+sub_title: Execute feature on one browser but on Sauce Labs
 parents: ["Execution", "Sauce Labs"]
 ---
 
