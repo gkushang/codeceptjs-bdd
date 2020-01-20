@@ -10,12 +10,14 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import Tooltip from '@material-ui/core/Tooltip';
-import {Link} from "gatsby";
+import {Link as GatsbyLink} from "gatsby";
+import Link from '@material-ui/core/Link';
 import logo from "../images/codecept-e2e-logo.jpg";
 import cucumberLogo from "../images/cucumber-logo.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from '@material-ui/core/Hidden';
+import Avatar from '@material-ui/core/Avatar';
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -48,7 +50,13 @@ const useStyles = makeStyles(theme => ({
 
   title: {
     flexGrow: 1,
+    color: 'white',
+    "&:hover": {
+      textDecoration: 'none',
+      color: 'lightgray'
+    }
   },
+
   logoSection: {
     height: '65px',
     width: '65px',
@@ -86,27 +94,32 @@ function Header({ siteTitle, siteDescription }, props) {
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
               <MenuIcon />
             </IconButton>
+              <Hidden smDown>
+                <Link href="/">
+                  <Avatar alt="Codeceptjs" src={logo}  />
+                </Link>
+                
+                <Avatar alt="Cucumber"  className={classes.cucumberImage} src={cucumberLogo} />
+                
+                <Link href="/" className={classes.title}>
+                  <Typography variant="h6" className={classes.title}>
+                    Codeceptjs BDD Framework Documentation Hub
+                  </Typography>
+                </Link>
+              </Hidden>
 
-            <Hidden smDown>
-              <img className={classes.image} src={logo} alt="codeceptjs e2e logo" />
-              <img className={classes.cucumberImage} src={cucumberLogo} alt="cucumber logo" />
-              <Typography variant="h6" className={classes.title}>
-                Codeceptjs BDD Framework Documentation Hub
-              </Typography>
-            </Hidden>
-
-            <Hidden mdUp>
-              <Typography variant="h6" className={classes.title}>
-                Codeceptjs BDD
-              </Typography>
-            </Hidden>
-
+              <Hidden mdUp>
+                <Typography variant="h6" className={classes.title}>
+                  Codeceptjs BDD
+                </Typography>
+              </Hidden>
+            
             <Tooltip title="Go to Home">
-              <Link to="/">
+              <GatsbyLink to="/">
                 <IconButton aria-label="Go to home page" color="inherit">
                   <HomeIcon style={{fill: "white"}}/>
                 </IconButton>
-              </Link>
+              </GatsbyLink>
             </Tooltip>
 
             <Tooltip title="Github Repository">

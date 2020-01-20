@@ -14,10 +14,10 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import DomainIcon from '@material-ui/icons/Domain';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -118,7 +118,7 @@ const IndexPage = () => {
           <CardHeader
             avatar={
               <Avatar aria-label="architecture" className={classes.avatar}>
-                A
+                <DomainIcon/>
               </Avatar>
             }
             title="Framework Architecture"
