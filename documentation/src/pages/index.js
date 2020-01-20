@@ -79,7 +79,11 @@ const IndexPage = () => {
       </CardContent>
 
       <CardActions>
-        <Button variant="contained"  size="large" color="primary" href="getting-started/setup-framework/">
+        <Button variant="contained"  size="large" color="primary" href="getting-started/installation/">
+          Getting Started
+        </Button>
+
+        <Button variant="contained"  size="large" color="secondary" href="getting-started/setup-framework/">
           Quick Setup
         </Button>
       </CardActions>
