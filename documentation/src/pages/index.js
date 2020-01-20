@@ -27,8 +27,6 @@ const useStyles = makeStyles(theme => ({
   card: {
     height: '100%',
     width: '100%',
-    marginTop: '1em',
-    // marginBottom: '1em'
   },
   media: {
     height: 0,
@@ -53,6 +51,9 @@ const useStyles = makeStyles(theme => ({
     borderBottomRightRadius: theme.spacing(2),
     paddingRight: theme.spacing(1),
     fontWeight: theme.typography.fontWeightMedium,
+  },
+  arch: {
+    paddingTop: 30
   }
 }));
 
@@ -68,7 +69,7 @@ const IndexPage = () => {
       Codeceptjs BDD
     </Typography>
     <Typography variant="overline" display="block"  gutterBottom>
-      BDD Framework with Cucumber and Saucelabs cloud
+      CODECEPTJS BDD Framework integrated with Cucumber and Saucelabs cloud
     </Typography>
   
     <Divider/>
@@ -78,7 +79,7 @@ const IndexPage = () => {
       Codeceptjs-BDD makes acceptance and regression testing of modern web apps faster, more collaborative and easier to scale.
     </Typography>
     
-    <Grid container spacing={5}>
+    <Grid container spacing={5} className={classes.arch}>
         <Grid item sm={3}>
           <AppCard 
           title="Why BDD?" 
@@ -107,42 +108,42 @@ const IndexPage = () => {
         <AppCard 
           title="Multi Browsers in Parallel" 
           description="CodeceptJs BDD provides an ability to run BDD Feaure files all in Parallel on Single browser or run same set of tests in Parallel but on different browsers/OS combo on Sauce Labs."  
-          link="https://saucelabs.com/" 
+          link="/execution/sauce-labs/on-multiple-browsers/" 
           image={multibrowsers}/>
         </Grid>
       </Grid>
 
-      <Grid item xs={12}>
-    <Card className={classes.card}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="architecture" className={classes.avatar}>
-            A
-          </Avatar>
-        }
-        title="Framework Architecture"
-        subheader="Codeceptjs BDD"
-      />
-      <CardMedia
-        className={classes.media}
-        image={codeceptjsBddFrameworkImage}
-        title="Architecture"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-        </Typography>
-      </CardContent>
+      <Grid item xs={12} className={classes.arch}>
+        <Card className={classes.card}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="architecture" className={classes.avatar}>
+                A
+              </Avatar>
+            }
+            title="Framework Architecture"
+            subheader="Codeceptjs BDD"
+          />
+          <CardMedia
+            className={classes.media}
+            image={codeceptjsBddFrameworkImage}
+            title="Architecture"
+          />
+          <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p">
+            </Typography>
+          </CardContent>
 
-      <CardActions>
-        <Button variant="contained"  size="large" color="primary" href="getting-started/installation/">
-          Getting Started
-        </Button>
+          <CardActions>
+            <Button variant="contained"  size="large" color="primary" href="getting-started/installation/">
+              Getting Started
+            </Button>
 
-        <Button variant="contained"  size="large" color="secondary" href="getting-started/setup-framework/">
-          Quick Setup
-        </Button>
-      </CardActions>
-      </Card>
+            <Button variant="contained"  size="large" color="secondary" href="getting-started/setup-framework/">
+              Quick Setup
+            </Button>
+          </CardActions>
+          </Card>
       </Grid>
       </div>
   </AppLayout>
