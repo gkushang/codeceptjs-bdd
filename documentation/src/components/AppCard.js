@@ -44,10 +44,11 @@ const useStyles = makeStyles(theme => ({
       borderBottomRightRadius: theme.spacing(2),
       paddingRight: theme.spacing(1),
       fontWeight: theme.typography.fontWeightMedium,
-    }
+    },
+
 }));
 
-export default function AppCard({ image, title, description, link }) {
+export default function AppCard({ image, title, description, link, secondLink, secondLinkName }) {
     const classes = useStyles();
   return (
     <Card className={classes.card}>
@@ -71,12 +72,18 @@ export default function AppCard({ image, title, description, link }) {
             </CardContent>
 
         </CardActionArea>
-
+        
         <CardActions>
             <Button size="small" color="primary" 
             target="_blank"
             href={link}>
                 Learn More
+            </Button>
+    
+            <Button size="small" color="primary" 
+            style={secondLink ? {} : { display: 'none' }} 
+            href={secondLink}>
+                {secondLinkName}
             </Button>
         </CardActions>
   </Card>

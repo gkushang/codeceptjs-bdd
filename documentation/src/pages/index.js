@@ -106,6 +106,8 @@ const IndexPage = () => {
           title="Interactive CLI" 
           description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly start with the UI Automated Tests. Watch the Video here."  
           link="https://youtu.be/OGrn1ejyb-k" 
+          secondLink="/getting-started/setup-framework/"
+          secondLinkName = "Quick Start"
           image={quickSetupImage}/>
         </Grid>
       </Grid>
