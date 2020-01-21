@@ -5,6 +5,11 @@ parents: ["Getting Started"]
 ---
 <br/>
 
+### 🎥 Watch Quick Setup in Action
+
+<a href='https://youtu.be/OGrn1ejyb-k' target='_blank'><img src='https://i.postimg.cc/DZ15ztxk/Screen-Shot-2020-01-20-at-2-53-19-PM.png' border='0' alt='BDD'/></a>
+
+
 ## 🔳 Interactive CLI
 
 This framework provides an Interactive CLI to setup the framework in just two steps. 
@@ -35,8 +40,4 @@ Below steps assumes you have already installed all the required dependencies fro
 ```
 
 💯Follow the instructions on CLI. Once done, you're ready to start writing automated Feature files for your app 🎉
-
-### 🎥 Watch Quick Setup in Action
-
-<a href='https://youtu.be/OGrn1ejyb-k' target='_blank'><img src='https://i.postimg.cc/DZ15ztxk/Screen-Shot-2020-01-20-at-2-53-19-PM.png' border='0' alt='BDD'/></a>
 

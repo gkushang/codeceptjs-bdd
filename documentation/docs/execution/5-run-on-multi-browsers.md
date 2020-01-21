@@ -1,7 +1,7 @@
 ---
-title: On Single Browser
+title: Run Multi-Browsers
 sub_title: Execute features on Single browser locally
-parents: ["Execution", "Locally"]
+parents: ["Execution"]
 ---
 
 # Coming Soon
