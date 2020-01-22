@@ -106,7 +106,7 @@ const IndexPage = () => {
           title="Interactive CLI" 
           description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly start with the UI Automated Tests. Watch the Video here."  
           link="https://youtu.be/OGrn1ejyb-k" 
-          secondLink="/getting-started/setup-framework/"
+          secondLink="/1-getting-started/setup-framework/"
           secondLinkName = "Quick Start"
           image={quickSetupImage}/>
         </Grid>
@@ -170,11 +170,11 @@ const IndexPage = () => {
           </CardContent>
 
           <CardActions>
-            <Button variant="contained"  size="large" color="primary" href="getting-started/installation/">
+            <Button variant="contained"  size="large" color="primary" href="1-getting-started/installation/">
               Getting Started
             </Button>
 
-            <Button variant="contained"  size="large" color="secondary" href="getting-started/setup-framework/">
+            <Button variant="contained"  size="large" color="secondary" href="1-getting-started/setup-framework/">
               Quick Setup
             </Button>
           </CardActions>
