@@ -93,27 +93,7 @@ const IndexPage = () => {
           image={BDD}/>
         </Grid>
 
-        <Grid item sm={4}>
-          <AppCard 
-          title="Reduced Flakiness" 
-          description="Codeceptjs has in-build functionality to auto-rety the failed steps at configurabe interval. Codeceptjs-BDD framework has configured auto-retry to reduce the Flakiness in UI Tests."  
-          link="https://codecept.io/plugins/#retryfailedstep" 
-          image={autoRetry}/>
-        </Grid>
-
-        <Grid item sm={4}>
-        <AppCard 
-          title="Interactive CLI" 
-          description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly start with the UI Automated Tests. Watch the Video here."  
-          link="https://youtu.be/OGrn1ejyb-k" 
-          secondLink="/1-getting-started/setup-framework/"
-          secondLinkName = "Quick Start"
-          image={quickSetupImage}/>
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={5} className={classes.arch}>
-        <Grid item sm={3}>
+      <Grid item sm={4}>
           <AppCard 
           title="Write Feature Files" 
           description="CodeceptJs BDD integrates Cucumber to write Gherkin Feature Files. Cucumber is a popular collaboration tool used by many teams practiving BDD to capture requirements and create executable specifications."  
@@ -121,13 +101,35 @@ const IndexPage = () => {
           image={cucumber}/>
         </Grid>
 
-        <Grid item sm={3}>
+        <Grid item sm={4}>
         <AppCard 
           title="Execute On Cloud" 
           description="CodeceptJs BDD integrates Sauce Labs to execute tests on 900+ Desktop/Mobile browses, OS & Devices combinations. Tests can be executed locally or on Sauce Labs Browsers for broader coverage."  
-          link="https://saucelabs.com/" 
+          link="/execution/3-run-on-saucelabs/" 
           image={saucelabs}/>
         </Grid>
+      </Grid>
+
+      <Grid container spacing={5} className={classes.arch}>
+      
+        <Grid item sm={3}>
+        <AppCard 
+          title="Quick Setup Wizard" 
+          description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files. Watch in action."  
+          link="https://youtu.be/OGrn1ejyb-k" 
+          secondLink="/1-getting-started/setup-framework/"
+          secondLinkName = "Quick Start"
+          image={quickSetupImage}/>
+        </Grid>
+
+        <Grid item sm={3}>
+          <AppCard 
+          title="Reduced Flakiness" 
+          description="Codeceptjs has in-built Smart Wait and Auto Retry features for the elements that do not load in-time or elements that fails. Codeceptjs-BDD framework has configured these features that reduces the UI Test Flakiness at low level during DOM Element evaluation."  
+          link="https://codecept.io/plugins/#retryfailedstep" 
+          image={autoRetry}/>
+        </Grid>
+
 
         <Grid item sm={3}>
           <AppCard 
