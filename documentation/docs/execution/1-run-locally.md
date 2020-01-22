@@ -3,13 +3,6 @@ title: Run Locally
 sub_title: Execute Features on Local Development Enviornment
 parents: ["Execution"]
 ---
-<br/>
-
-### 🎥 Watch in Action
-
-<a href='https://youtu.be/udp_ZYT4imM' target='_blank'><img src='https://i.postimg.cc/XNL9jHmW/Run-All-Tests-Locally.png' border='0' alt='How To Run Tests Locally'/></a>
-
-<br/>
 
 ## 💻 Run All Tests
 
@@ -50,5 +43,9 @@ Below command runs tests tagged with **@my\_test\_tag** on _default_ browser
 ```
 
 More information on tags is available [here](https://somelin.com)
+
+### 🎥 Watch in Action
+
+<a href='https://youtu.be/udp_ZYT4imM' target='_blank'><img src='https://i.postimg.cc/XNL9jHmW/Run-All-Tests-Locally.png' border='0' alt='How To Run Tests Locally'/></a>
 
 
