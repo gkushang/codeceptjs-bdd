@@ -34,7 +34,7 @@ Tags can be placed above the following Gherkin elements:
 * Scenario Outline
 * Examples
 
-### 🌀 Running a subset of scenarios
+## 🌀 Running a subset of scenarios
 
 Run subset of tags through command line parameter: `--grep <@tag>`. 
 
@@ -46,7 +46,7 @@ Below command runs tests tagged with **@my\_test\_tag** on _default_ browser
 
 ```
 
-### 🌀 Exclude or Include certain types of Tags
+## 🌀 Exclude or Include certain types of Tags
 
 Use regex for more flexible filtering:
 

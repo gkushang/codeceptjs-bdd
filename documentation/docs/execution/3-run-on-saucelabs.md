@@ -53,7 +53,7 @@ Below command runs all scenarios marked with tag _@my\_tag_ on Sauce Labs' _fire
 
 Dashboard is the great way group your scenarios/regression suites on Sauce platform. The Sauce Dashboard is the first page you'll see when you log into the Sauce Labs web interface. Each link on Dashboard contains group of tests ran for the particular _build_.
 
-Codeceptjs-BDD will automatically create an Unique dashboard for every tests run.
+**Codeceptjs-BDD will automatically create an Unique dashboard for every tests run.**
 
 **Can I Customize my Dashboard Title?**
 Yes, you can do that too by by providing `SAUCE_BUILD` environment variable. This is sometimes very helpful to view how many and what tests ran for which release build.
@@ -69,7 +69,8 @@ Below command will create unique dashboard on sauce with title **release-1.0-{ra
 
 The supported browsers/OS is listed [here](https://github.com/gkushang/codeceptjs-bdd/blob/master/packages/codeceptjs-saucelabs/lib/browsers.conf.js). 
 
-**Can I run on my own Customized browser/os?** Yes, you can override any existing configruation or provide new Browser configuration through your `codecept.conf.js` file. 
+**Can I run on my own Customized browser/os?** 
+Yes, you can override any existing configruation or provide new Browser configuration through your `codecept.conf.js` file. 
 
 Follow the below steps,
 1. Go to your codecept.conf.js
