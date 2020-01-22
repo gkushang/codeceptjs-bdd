@@ -24,6 +24,11 @@ Codeceptjs-BDD framework integrates the cloud based platform [Sauce Labs](https:
 
 Once you provide your Sauce username and accesskey during [quick setup](/1-getting-started/setup-framework/), Codeceptjs-BDD will do the rest of the job for you, and integrates all required libraries, plugins and helpers to get started.
 
+## 🎥 Watch in Action
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ugCjMOJlClc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## 🏃 Run Scenarios on Sauce Labs
 ----
 
@@ -99,5 +104,3 @@ codeceptjs_saucelabs(SAUCE_USERNAME, SAUCE_KEY, {opera: {
     }
 })
 ```
-
-

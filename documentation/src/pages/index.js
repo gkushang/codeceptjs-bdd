@@ -111,16 +111,42 @@ const IndexPage = () => {
       </Grid>
 
       <Grid container spacing={5} className={classes.arch}>
-      
-        <Grid item sm={3}>
-        <AppCard 
-          title="Quick Setup Wizard" 
-          description="Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files. Watch in action."  
-          link="https://youtu.be/OGrn1ejyb-k" 
-          secondLink="/1-getting-started/setup-framework/"
-          secondLinkName = "Quick Start"
-          image={quickSetupImage}/>
-        </Grid>
+
+
+      <Grid item sm={3}>
+        <Card className={classes.card}>
+    
+        <CardMedia
+            component="iframe"
+            alt="some"
+            height="43%"
+            width="100%"
+            src="https://www.youtube.com/embed/OGrn1ejyb-k"
+            title="some"
+        />
+
+          <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                Quick Setup Wizard
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files. Watch in action.
+                </Typography>
+            </CardContent>
+  
+     
+            <CardActions>
+            <Button size="small" color="primary" 
+            href="/1-getting-started/setup-framework/">
+                Learn More
+            </Button>
+  
+        </CardActions>
+
+      </Card>
+    </Grid>
+
+  
 
         <Grid item sm={3}>
           <AppCard 
