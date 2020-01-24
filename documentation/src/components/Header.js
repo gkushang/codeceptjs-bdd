@@ -57,16 +57,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
 
-  logoSection: {
-    height: '65px',
-    width: '65px',
-  },
-  image: {
-    width: '3%',
-    height: '3%',
-    'margin-right': '10px',
-    opacity: 0.9
-  },
   cucumberImage: {
     width: '3%',
     height: '3%',
@@ -98,9 +88,9 @@ function Header({ siteTitle, siteDescription }, props) {
                 <Link href="/">
                   <Avatar alt="Codeceptjs" src={codeceptLogo}  />
                 </Link>
-                
+
                 <Avatar alt="Cucumber"  className={classes.cucumberImage} src={cucumberLogo} />
-                
+
                 <Link href="/" className={classes.title}>
                   <Typography variant="h6" className={classes.title}>
                     Codeceptjs BDD Framework Documentation Hub
@@ -115,7 +105,7 @@ function Header({ siteTitle, siteDescription }, props) {
                 </Typography>
                 </Link>
               </Hidden>
-            
+
             <Tooltip title="Go to Home">
               <GatsbyLink to="/">
                 <IconButton aria-label="Go to home page" color="inherit">
@@ -166,7 +156,7 @@ function Header({ siteTitle, siteDescription }, props) {
         </nav>
       </div>
   );
-};
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
