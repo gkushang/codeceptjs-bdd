@@ -163,7 +163,7 @@ const IndexPage = () => {
 
       <Grid item sm={3}>
         <AppCard 
-          title="Run in Parallel"
+          title="Parallel Executions"
           description="Run all your Feature files in Parallel. Codeceptjs-BDD automatically calculates number of threads to spun based on # of Features. You can choose to run them on either Sauce Labs or Locally installed browsers."
           component="iframe"
           firstLinkName="Watch in Action"
@@ -174,7 +174,7 @@ const IndexPage = () => {
 
         <Grid item sm={3}>
         <AppCard 
-          title="Run on Multi Browsers"
+          title="Multi Browsers | Parallel"
           description="Run your scenarios on Multiple Browsers in Parallel, including multiple versions of same brwoser or different browsers and different OS combinations on Sauce Labs. Boost your Test Execution coverage."
           link="https://www.youtube.com/watch?v=njOlOJ07Dxw"
           component="iframe"
