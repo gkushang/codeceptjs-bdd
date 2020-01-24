@@ -4,10 +4,11 @@ import AppCard from "../components/AppCard";
 import codeceptjsBddFrameworkImage from "../images/codeceptbdd-arc.png";
 import BDD from "../images/BDD.png";
 import autoRetry from "../images/autoRetry.png";
+import driversImage from "../images/driverAgnostic.png";
 import quickSetupImage from "../images/quickSetup.png";
-import pluginBasedImage from "../images/plugin-based.png";
+import pluginBasedImage from "../images/pluginBased.png";
 import cucumber from "../images/cucumber1.png";
-import multibrowsers from "../images/multibrowsers.png";
+import multibrowsers from "../images/multi-browsers.png";
 import saucelabs from "../images/saucelabs1.png";
 import { Divider } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
@@ -114,39 +115,12 @@ const IndexPage = () => {
 
 
       <Grid item sm={3}>
-        <Card className={classes.card}>
-    
-        <CardMedia
-            component="iframe"
-            alt="some"
-            height="43%"
-            width="100%"
-            src="https://www.youtube.com/embed/OGrn1ejyb-k"
-            title="some"
-        />
-
-          <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                Quick Setup Wizard
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                Are you looking to quicky setup the full BDD Framework for you app? Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files. Watch in action.
-                </Typography>
-            </CardContent>
-  
-     
-            <CardActions>
-            <Button size="small" color="primary" 
-            href="/1-getting-started/setup-framework/">
-                Learn More
-            </Button>
-  
-        </CardActions>
-
-      </Card>
-    </Grid>
-
-  
+          <AppCard 
+          title="Driver Agnostic" 
+          description="Run your tests via WebDriver, Puppeteer, TestCafe, Protractor, Appium. The code is the same. It is easy to change the driver through configuration. Codecpetjs-BDD supports Pupetter, Headless Chrome, Selenium Webdriver and Webdriver IO."  
+          link="https://codecept.io/plugins/#retryfailedstep" 
+          image={driversImage}/>
+        </Grid>
 
         <Grid item sm={3}>
           <AppCard 
@@ -159,8 +133,8 @@ const IndexPage = () => {
 
         <Grid item sm={3}>
           <AppCard 
-          title="Plugin Based Architecture" 
-          description="CodeceptJs-BDD implements and packages the plugins to reuse shared configuration and sauce labs api's: codecpetjs-shared, codeceptjs-saucelabs."  
+          title="Plugin Based" 
+          description="Codeceptjs is a plugin based architecture. You can create helpers and plugins for your need and easily plug in to the framework. Codeceptjs-bdd implements two plugins: codeceptjs-share to share config and codeceptjs-saucelabs to integrate Sauce Labs."  
           link="https://github.com/gkushang/codeceptjs-bdd/tree/develop/packages" 
           image={pluginBasedImage}/>
         </Grid>
@@ -168,13 +142,60 @@ const IndexPage = () => {
 
         <Grid item sm={3}>
         <AppCard 
-          title="Multi Browsers in Parallel" 
-          description="CodeceptJs BDD provides an ability to run BDD Feaure files all in Parallel on Single browser or run same set of tests in Parallel but on different browsers/OS combo on Sauce Labs."  
+          title="Multibrowsers | Parallel" 
+          description="Codeceptjs BDD provides an ability to run BDD Feaure files all in Parallel on Single browser or can run same set of tests in Parallel but on different browsers/OS combo (multile browers) on Sauce Labs. It offers greate Test Execution Coverage for your App."  
           link="/execution/sauce-labs/on-multiple-browsers/" 
           image={multibrowsers}/>
         </Grid>
-      </Grid>
 
+
+        <Grid item sm={3}>
+        <AppCard 
+          title="Quick Setup Wizard"
+          description="Quicky setup BDD framework for your App. Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files."
+          link="https://www.youtube.com/watch?v=OGrn1ejyb-k"
+          component="iframe"
+          firstLinkName="Watch in Action"
+          src="https://www.youtube.com/embed/OGrn1ejyb-k"
+          />
+        </Grid>
+
+
+      <Grid item sm={3}>
+        <AppCard 
+          title="Run in Parallel"
+          description="Run all your Feature files in Parallel. Codeceptjs-BDD automatically calculates number of threads to spun based on # of Features. You can choose to run them on either Sauce Labs or Locally installed browsers."
+          component="iframe"
+          firstLinkName="Watch in Action"
+          link="https://www.youtube.com/watch?v=he0_wn-xPGI&feature=emb_logo"
+          src="https://www.youtube.com/embed/he0_wn-xPGI"
+          />
+        </Grid>
+
+        <Grid item sm={3}>
+        <AppCard 
+          title="Run on Multi Browsers"
+          description="Run your scenarios on Multiple Browsers in Parallel, including multiple versions of same brwoser or different browsers and different OS combinations on Sauce Labs. Boost your Test Execution coverage."
+          link="https://www.youtube.com/watch?v=njOlOJ07Dxw"
+          component="iframe"
+          firstLinkName="Watch in Action"
+          src="https://www.youtube.com/embed/njOlOJ07Dxw"
+          />
+        </Grid>
+
+        <Grid item sm={3}>
+        <AppCard 
+          title="Run on Sauce Labs"
+          description="Codeceptjs-BDD framework integrates the cloud based platform Sauce Labs to execute scenarios on 900+ Desktop/Mobile browses, OS & Devices combinations, providing Greater Scenarios Execution Coverage."
+          link="https://www.youtube.com/watch?v=ugCjMOJlClc"
+          firstLinkName="Watch in Action"
+          component="iframe"
+          src="https://www.youtube.com/embed/ugCjMOJlClc"
+          />
+        </Grid>
+
+      </Grid>
+      
 
       <Grid item xs={12} className={classes.arch}>
         <Card className={classes.card}>

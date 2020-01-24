@@ -45,17 +45,25 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function AppCard({ image, title, description, link, secondLink, secondLinkName }) {
+export default function AppCard({ image, 
+  title, description, link, firstLinkName, secondLink, secondLinkName,
+  component, src, mediaHeight, mediaWidth }) {
     const classes = useStyles();
+    const comp = component || "img";
+    const fLinkName = firstLinkName || "Learn More"
+  
   return (
     <Card className={classes.card}>
         <CardActionArea href={link} target="_blank">
             <CardMedia
-                component="img"
+                component={comp}
                 alt={title}
                 height="100%"
                 width="100%"
                 image={image}
+                src={src}
+                height={mediaHeight}
+                width={mediaWidth}
                 title={title}
             />
 
@@ -71,10 +79,11 @@ export default function AppCard({ image, title, description, link, secondLink, s
         </CardActionArea>
         
         <CardActions>
+
             <Button size="small" color="primary" 
             target="_blank"
             href={link}>
-                Learn More
+                {fLinkName}
             </Button>
     
             <Button size="small" color="primary" 
