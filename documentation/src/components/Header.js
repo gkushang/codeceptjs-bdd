@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Link as GatsbyLink} from "gatsby";
 import Link from '@material-ui/core/Link';
+import codeceptLogo from "../images/codeceptjs-logo.png";
 import cucumberLogo from "../images/cucumber-logo.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
@@ -67,8 +68,8 @@ const useStyles = makeStyles(theme => ({
     opacity: 0.9
   },
   cucumberImage: {
-    width: '3.4%',
-    height: '3.4%',
+    width: '3%',
+    height: '3%',
     'margin-right': '10px',
     'margin-left': '-30px',
     zIndex:-1
@@ -95,7 +96,7 @@ function Header({ siteTitle, siteDescription }, props) {
             </IconButton>
               <Hidden smDown>
                 <Link href="/">
-                  <Avatar alt="Codeceptjs" src={cucumberLogo}  />
+                  <Avatar alt="Codeceptjs" src={codeceptLogo}  />
                 </Link>
                 
                 <Avatar alt="Cucumber"  className={classes.cucumberImage} src={cucumberLogo} />

@@ -65,6 +65,7 @@ export default function AppLayout({ children, location }) {
                     <main className={classes.content}>
                         {children}
                     </main>
+                    
                 </div>
             </main>
           </div>
