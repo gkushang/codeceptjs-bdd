@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -47,11 +48,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function AppCard({ image, 
   title, description, link, firstLinkName, secondLink, secondLinkName,
-  component, src, mediaHeight, mediaWidth }) {
+  component, src, mediaHeight, mediaWidth, icon }) {
+    
     const classes = useStyles();
     const comp = component || "img";
     const fLinkName = firstLinkName || "Learn More"
-  
+    
   return (
     <Card className={classes.card}>
         <CardActionArea href={link} target="_blank">
@@ -66,7 +68,6 @@ export default function AppCard({ image,
                 width={mediaWidth}
                 title={title}
             />
-
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                 {title}
@@ -75,11 +76,11 @@ export default function AppCard({ image,
                 {description}
                 </Typography>
             </CardContent>
-
+      
         </CardActionArea>
         
         <CardActions>
-
+            {icon}
             <Button size="small" color="primary" 
             target="_blank"
             href={link}>
