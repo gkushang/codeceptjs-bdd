@@ -153,14 +153,13 @@ const IndexPage = () => {
           image={multibrowsers}/>
         </Grid>
 
-
         <Grid item sm={3}>
           <AppCard 
             title="Quick Setup Wizard" 
             description="Quicky setup BDD framework for your App. Codecept-BDD implemetns the Interactive CLI to quickly setup the BDD Framework, integration with Sauce Labs and provides set of example Automated Feature files."
             link="https://www.youtube.com/watch?time_continue=1&v=OGrn1ejyb-k&feature=emb_logo" 
             firstLinkName="Watch in Action"
-            icon={<YouTubeIcon color="secondary" style={{ marginRight:"-8" }}/>}
+            icon={<YouTubeIcon color="secondary"/>}
             image={quickStartYt}/>
         </Grid>
 
@@ -170,7 +169,7 @@ const IndexPage = () => {
             description="Run all your Feature files in Parallel. Codeceptjs-BDD automatically calculates number of threads to spun based on # of Features. You can choose to run them on either Sauce Labs or Locally installed browsers."
             link="https://www.youtube.com/watch?v=he0_wn-xPGI&feature=emb_logo"
             firstLinkName="Watch in Action"
-            icon={<YouTubeIcon color="secondary" style={{ marginRight:"-8" }}/>}
+            icon={<YouTubeIcon color="secondary" />}
             image={runParallelYt}/>
         </Grid>
 
@@ -181,7 +180,7 @@ const IndexPage = () => {
             description="Run your scenarios on Multiple Browsers in Parallel, including multiple versions of same brwoser or different browsers and different OS combinations on Sauce Labs. Boost your Test Execution coverage."
             link="https://www.youtube.com/watch?v=njOlOJ07Dxw"
             firstLinkName="Watch in Action"
-            icon={<YouTubeIcon color="secondary" style={{ marginRight:"-8" }}/>}
+            icon={<YouTubeIcon color="secondary"/>}
             image={runMultiYt}/>
         </Grid>
 
@@ -191,12 +190,14 @@ const IndexPage = () => {
             description="Codeceptjs-BDD framework integrates the cloud based platform Sauce Labs to execute scenarios on 900+ Desktop/Mobile browses, OS & Devices combinations, providing Greater Scenarios Execution Coverage."
             link="https://www.youtube.com/watch?v=ugCjMOJlClc"
             firstLinkName="Watch in Action"
-            icon={<YouTubeIcon color="secondary" style={{ marginRight:"-8" }}/>}
+            icon={<YouTubeIcon color="secondary"/>}
             image={runSauceYt}/>
         </Grid>
 
       </Grid>
       
+    <br></br>
+    <br></br>
 
       <Grid item xs={12} className={classes.arch}>
         <Card className={classes.card}>

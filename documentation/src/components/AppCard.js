@@ -79,7 +79,7 @@ export default function AppCard({ image,
       
         </CardActionArea>
         
-        <CardActions>
+        <CardActions disableSpacing>
             {icon}
             <Button size="small" color="primary" 
             target="_blank"
