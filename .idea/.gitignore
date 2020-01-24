@@ -1,5 +1,3 @@
-node_modules
-packages/codeceptjs-cucumber/acceptance/report/
 /$CACHE_FILE$
 /codeceptjs-bdd.iml
 /misc.xml
