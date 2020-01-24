@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
         fontWeight: theme.typography.fontWeightMedium,
     },
     subTitle: {
-        color: '#444444',
-        fontWeight: theme.typography.fontWeightRegular,
+        color: '#5e5e5e',
+        fontWeight: theme.typography.fontWeightBold,
     },
 
 }));
@@ -45,7 +45,7 @@ export default function DocPage({data, location}) {
             <Typography variant="h4" className={classes.title} gutterBottom>
                 {post.frontmatter.title}
             </Typography>
-            <Typography variant="h6" className={classes.subTitle} gutterBottom>
+            <Typography variant="overline" display="block" className={classes.subTitle} gutterBottom>
                 {post.frontmatter.sub_title}
             </Typography>
             <Divider/>
