@@ -4,7 +4,7 @@ sub_title: Execute Features on Local Development Enviornment
 parents: ["Execution"]
 ---
 
-## 💻 Run on your local enviornment
+## 💻 Run on your Local enviornment
 
 CodeceptjsBDD provides below commands to run your tests locally. You can also choose to run subset of scenarios locally. This is very useful to build automation for a feature in development.
 
