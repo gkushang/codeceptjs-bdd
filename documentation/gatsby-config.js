@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/codeceptjs-bdd/docs",
   siteMetadata: {
     title: `CodeceptJs BDD Framework Documentation Hub`,
     description: `This framework contains Gherkin BDD Tests with CodeceptJS & uses Should.JS assertion library. Intgrated with Saucelabs to run on Multibrowsers in Parallel`,
