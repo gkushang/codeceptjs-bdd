@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Tooltip from '@material-ui/core/Tooltip';
 import {Link as GatsbyLink} from "gatsby";
 import Link from '@material-ui/core/Link';
-import codeceptLogo from "../images/codeceptjs-logo.png";
+import logo from "../images/codecept-e2e-logo.jpg";
 import cucumberLogo from "../images/cucumber-logo.png";
 import Sidebar from "./Sidebar";
 import Drawer from "@material-ui/core/Drawer";
@@ -57,9 +57,19 @@ const useStyles = makeStyles(theme => ({
     }
   },
 
-  cucumberImage: {
+  logoSection: {
+    height: '65px',
+    width: '65px',
+  },
+  image: {
     width: '3%',
     height: '3%',
+    'margin-right': '10px',
+    opacity: 0.9
+  },
+  cucumberImage: {
+    width: '3.4%',
+    height: '3.4%',
     'margin-right': '10px',
     'margin-left': '-30px',
     zIndex:-1
@@ -86,11 +96,11 @@ function Header({ siteTitle, siteDescription }, props) {
             </IconButton>
               <Hidden smDown>
                 <Link href="/">
-                  <Avatar alt="Codeceptjs" src={codeceptLogo}  />
+                  <Avatar alt="Codeceptjs" src={logo}  />
                 </Link>
-
+                
                 <Avatar alt="Cucumber"  className={classes.cucumberImage} src={cucumberLogo} />
-
+                
                 <Link href="/" className={classes.title}>
                   <Typography variant="h6" className={classes.title}>
                     Codeceptjs BDD Framework Documentation Hub
@@ -105,7 +115,7 @@ function Header({ siteTitle, siteDescription }, props) {
                 </Typography>
                 </Link>
               </Hidden>
-
+            
             <Tooltip title="Go to Home">
               <GatsbyLink to="/">
                 <IconButton aria-label="Go to home page" color="inherit">
@@ -156,7 +166,7 @@ function Header({ siteTitle, siteDescription }, props) {
         </nav>
       </div>
   );
-}
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

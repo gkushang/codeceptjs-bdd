@@ -46,6 +46,13 @@ const useTreeItemStyles = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         padding: theme.spacing(1.0, 0),
+    },
+    labelIcon: {
+        marginRight: theme.spacing(1),
+    },
+    labelText: {
+        fontWeight: 'inherit',
+        flexGrow: 1,
     }
 }));
 
@@ -121,7 +128,7 @@ const useStyles = makeStyles({
 
 export default function FileSystemNavigator({ treeItems }) {
     const classes = useStyles();
-
+    
     const handleChange = (event, nodes) => {
         const localStorage = getLocalStorage();
         localStorage && localStorage.setItem("codeceptjs:documentation:sidebar:docs", JSON.stringify(nodes));

@@ -1,12 +1,13 @@
 {
   "name": "codeceptjs-cucumber",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "CodeceptJs Cucumber E2E Framework",
   "scripts": {
     "start": "node cli.js",
     "cli": "node cli.js",
     "acceptance": "./node_modules/.bin/codeceptjs run --verbose --features",
-    "acceptance:multiple": "./node_modules/.bin/codeceptjs run-multiple",
+    "acceptance:parallel": "./node_modules/.bin/codeceptjs run-multiple parallel",
+    "acceptance:parallel:multibrowsers": "./node_modules/.bin/codeceptjs run-multiple multibrowsers",
     "acceptance:report": "./node_modules/.bin/allure serve ./acceptance/report",
     "bdd:snippets": "./node_modules/.bin/codeceptjs bdd:snippets",
     "test": "yarn acceptance --profile chrome:headless"
@@ -32,8 +33,8 @@
     "allure-commandline": "^2.9.0",
     "chalk": "^2.4.2",
     "codeceptjs": "^2.3.0",
-    "codeceptjs-saucelabs": "^2.0.9",
-    "codeceptjs-shared": "^2.0.7",
+    "codeceptjs-saucelabs": "^2.0.10",
+    "codeceptjs-shared": "^2.0.8",
     "debug": "^4.1.1",
     "deepmerge": "^4.0.0",
     "faker": "^4.1.0",
