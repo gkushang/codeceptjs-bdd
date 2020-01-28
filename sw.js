@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-62c83c2ff7cdc7d11276.js"
+    "url": "webpack-runtime-828599e9283b33a8171a.js"
   },
   {
     "url": "styles.2388a8f054c070b89dc7.css"
@@ -39,14 +39,14 @@ self.__precacheManifest = [
     "url": "commons-d97fecc6a5bf12a67b41.js"
   },
   {
-    "url": "app-80c7c325b86c54a69198.js"
+    "url": "app-5d4e201ada4d6ff32790.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-2d4160bee8fcacdef467.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "0640652533e15fde2c7a453a682facd9"
+    "revision": "27bbfa81557ccda3def132ed3d0da92c"
   },
   {
     "url": "static/webfonts/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"
@@ -151,12 +151,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/codeceptjs-bdd`), ``)
+  pathname = pathname.replace(new RegExp(`^/codeceptjs-bdd/docs`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/codeceptjs-bdd/app-80c7c325b86c54a69198.js`))) {
+  if (!resources || !(await caches.match(`/codeceptjs-bdd/docs/app-5d4e201ada4d6ff32790.js`))) {
     return await fetch(event.request)
   }
 
@@ -169,7 +169,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/codeceptjs-bdd/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/codeceptjs-bdd/docs/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
