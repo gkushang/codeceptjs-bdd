@@ -32,7 +32,7 @@
   "devDependencies": {
     "allure-commandline": "^2.9.0",
     "chalk": "^2.4.2",
-    "codeceptjs": "^2.3.0",
+    "codeceptjs": "^2.5.0",
     "codeceptjs-saucelabs": "^3.0.0",
     "codeceptjs-shared": "^3.0.0",
     "debug": "^4.1.1",
@@ -48,5 +48,8 @@
     "soft-assert": "^0.2.0",
     "webdriverio": "^5.12.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^0.12.1"
+  }
 }

@@ -1,24 +1,16 @@
 const debug = require("debug")("acceptance:config");
+const merge = require("deepmerge");
 const web_driver_commands = require.resolve(
   "../helpers/webdriver-commands.helper.js"
 );
 const custom_methods = require.resolve("../helpers/custom-methods.js");
 const { steps } = require("./steps");
 
-const BROWSER = process.profile || "chrome";
+process.env.WEBDRIVER_BROWSER = process.profile || "chrome";
+const DRIVER = process.env.DRIVER || "webdriver";
 
-const conf = {
+let conf = {
   helpers: {
-    WebDriver: {
-      browser: BROWSER,
-      smartWait: 5000,
-      waitForTimeout: 20000,
-      timeouts: {
-        implicit: 5000,
-        script: 60000,
-        "page load": 10000
-      }
-    },
     WebDriver_commands: {
       require: web_driver_commands
     }
@@ -37,10 +29,6 @@ const conf = {
     retryFailedStep: {
       enabled: true,
       retries: 5
-    },
-    wdio: {
-      enabled: true,
-      services: ["selenium-standalone"]
     }
   },
   multiple: {
@@ -55,7 +43,7 @@ const conf = {
     },
     smoke: {
       grep: "@smoke",
-      browsers: [BROWSER]
+      browsers: [process.env.WEBDRIVER_BROWSER]
     }
   },
   gherkin: {
@@ -66,24 +54,32 @@ const conf = {
   }
 };
 
-if (process.profile && process.profile === "chrome:headless") {
-  debug('Tests are running on "chrome:headless" browser');
-  process.profile = process.profile.split(":")[0];
-  conf.helpers.WebDriver.browser = process.profile;
-  conf.helpers.WebDriver.capabilities = {
-    chromeOptions: {
-      args: ["--headless", "--disable-gpu", "--window-size=1920,1080"]
-    }
-  };
-} else if (
-  process.profile &&
-  (process.profile === "safari" || process.profile === "firefox")
-) {
-  conf.helpers.WebDriver.windowSize = "maximize";
+if (DRIVER === "webdriver") {
+  conf = merge(conf, require('./webdriver.conf'));
+
+  if (process.profile && process.profile === "chrome:headless") {
+    debug('Tests are running on "chrome:headless" browser');
+    process.profile = process.profile.split(":")[0];
+    conf.helpers.WebDriver.browser = process.profile;
+    conf.helpers.WebDriver.capabilities = {
+      chromeOptions: {
+        args: ["--headless", "--disable-gpu", "--window-size=1920,1080"]
+      }
+    };
+  } else if (
+    process.profile &&
+    (process.profile === "safari" || process.profile === "firefox")
+  ) {
+    conf.helpers.WebDriver.windowSize = "maximize";
+  }
+
+  if (!(process.profile && process.profile.match("sauce:[a-zA-Z]"))) {
+    conf.multiple.parallel.browsers = [process.env.WEBDRIVER_BROWSER];
+  }
 }
 
-if (!(process.profile && process.profile.match("sauce:[a-zA-Z]"))) {
-  conf.multiple.parallel.browsers = [BROWSER];
+if (DRIVER === 'playwright') {
+  conf = merge(conf, require('./playwright.conf'));
 }
 
 module.exports = conf;

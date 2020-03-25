@@ -1,6 +1,4 @@
-const merge = require("deepmerge");
-const master_config = require("codeceptjs-shared").config.master;
-const codeceptjs_saucelabs = require("codeceptjs-saucelabs").config.saucelabs;
+const createConf = require('codeceptjs-shared').createConf;
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -10,12 +8,6 @@ const PAGES_PATH = RELATIVE_PATH + "pages/";
 
 const HOST = "https://" + (process.env.HOST ? process.env.HOST : DEFAULT_HOST);
 
-// replace sauce_username & sauce_key with your SauceLabs Account
-const SAUCE_USERNAME = process.env.SAUCE_USERNAME
-  ? process.env.SAUCE_USERNAME
-  : "<sauce_username>";
-const SAUCE_KEY = process.env.SAUCE_KEY;
-
 let conf = {
   output: RELATIVE_PATH + "report",
   cleanup: true,
@@ -23,6 +15,10 @@ let conf = {
     host: HOST
   },
   helpers: {
+    Playwright : {
+      url: HOST,
+      show: true
+    },
     WebDriver: {
       url: HOST
     },
@@ -40,7 +36,4 @@ let conf = {
   name: "<name>"
 };
 
-exports.config = merge(
-  merge(conf, master_config),
-  codeceptjs_saucelabs(SAUCE_USERNAME, SAUCE_KEY)
-);
+exports.config = createConf(conf);
