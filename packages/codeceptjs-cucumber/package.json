@@ -9,8 +9,7 @@
     "acceptance:parallel": "./node_modules/.bin/codeceptjs run-multiple parallel",
     "acceptance:parallel:multibrowsers": "./node_modules/.bin/codeceptjs run-multiple multibrowsers",
     "acceptance:report": "./node_modules/.bin/allure serve ./acceptance/report",
-    "webdriver": "yarn acceptance --profile chrome:headless",
-    "playwright": "DRIVER=playwright yarn acceptance"
+    "test": "yarn acceptance --profile chrome:headless && DRIVER=playwright yarn acceptance"
   },
   "bin": {
     "codeceptjs-bdd": "./cli.js"
