@@ -15,7 +15,7 @@ const DRIVER = process.env.DRIVER || 'webdriver';
 const logInfo = (master_conf, driver) => {
   console.info(
     '\n' +
-      chalk.bgBlue.bold(emoji.emojify(':rocket: ') + `Launching browser '${master_conf.helpers[driver].browser }' on ${driver} ...\n`)
+      chalk.bgBlue.bold(emoji.emojify(':rocket: ') + `Launching browser '${master_conf.helpers[driver].browser}' on ${driver} ...\n`)
   );
   // console.info(chalk.gray.bold('Tests are running on : ') + chalk.blue.bold(master_conf.helpers[driver].browser  + '\n'));
 };

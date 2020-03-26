@@ -26,7 +26,6 @@ const get = function(conf) {
   conf = merge(conf, webdriver_conf);
 
   if (process.profile && process.profile === 'chrome:headless') {
-    debug('Tests are running on "chrome:headless" browser');
     process.profile = process.profile.split(':')[0];
     conf.helpers.WebDriver.browser = process.profile || BROWSER;
     conf.helpers.WebDriver.capabilities = {
