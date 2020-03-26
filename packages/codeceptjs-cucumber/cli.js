@@ -219,7 +219,7 @@ const run = async () => {
   }
 
   shell.sed('-i', '<name>', PROJECT_NAME, configFile);
-  shell.sed('-i', '<default_driver>', DRIVER, configFile);
+  shell.sed('-i', 'webdriver', DRIVER, configFile);
 
   shell.sed(
     '-i',
