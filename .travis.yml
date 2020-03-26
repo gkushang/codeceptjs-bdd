@@ -26,4 +26,5 @@ script:
   - whereis google-chrome-stable
   - whereis chromedriver
   - lerna bootstrap
-  - lerna run --scope codeceptjs-cucumber test
+  - lerna run --scope codeceptjs-cucumber webdriver
+  - lerna run --scope codeceptjs-cucumber playwright
