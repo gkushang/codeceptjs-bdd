@@ -1,6 +1,6 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 // update to 'webdriver' or 'playwright' for the selective browser
-process.env.DRIVER = process.env.DRIVER || 'playwright';
+process.env.DRIVER = process.env.DRIVER || '<default_driver>';
 process.env.DEFAULT_WEBDRIVER_BROWSER = 'chrome';
 process.env.DEFAULT_PLAYWRIGHT_BROWSER = 'chromium';
 
