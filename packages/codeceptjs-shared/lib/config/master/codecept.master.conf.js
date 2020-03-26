@@ -12,11 +12,12 @@ const { steps } = require('../bdd/steps');
 
 const DRIVER = process.env.DRIVER || 'webdriver';
 
-const logInfo = driver => {
+const logInfo = (master_conf, driver) => {
   console.info(
     '\n' +
-      chalk.bgBlue.bold(emoji.emojify(':rocket: ') + `Launching ${driver}...`)
+      chalk.bgBlue.bold(emoji.emojify(':rocket: ') + `Launching browser '${master_conf.helpers[driver].browser }' on ${driver} ...\n`)
   );
+  // console.info(chalk.gray.bold('Tests are running on : ') + chalk.blue.bold(master_conf.helpers[driver].browser  + '\n'));
 };
 
 let master_conf = {
@@ -66,11 +67,11 @@ let master_conf = {
 
 if (DRIVER === 'webdriver') {
   master_conf = webdriverConf.get(master_conf);
-  logInfo('WebDriver');
+  logInfo(master_conf, 'WebDriver');
 }
 if (DRIVER === 'playwright') {
   master_conf = playwrightConf.get(master_conf);
-  logInfo('PlayWright');
+  logInfo(master_conf, 'Playwright');
 }
 
 module.exports = { master_conf };
