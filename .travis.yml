@@ -23,11 +23,11 @@ install:
   - sudo mv -f ~/chromedriver /usr/local/share/
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-  - yarn cache clean
   - npm i lerna
 
 script:
   - whereis google-chrome-stable
   - whereis chromedriver
   - lerna bootstrap
+  - npm run dist
   - lerna run --scope codeceptjs-cucumber test
