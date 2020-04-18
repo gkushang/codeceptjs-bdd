@@ -1,9 +1,11 @@
 const BROWSER = process.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
 const merge = require('deepmerge');
+const host = require('../../host/host');
 
 const webdriver_conf = {
   helpers: {
     WebDriver: {
+      url: host.get(),
       browser: BROWSER,
       smartWait: 5000,
       waitForTimeout: 20000,

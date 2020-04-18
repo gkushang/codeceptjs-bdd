@@ -1,9 +1,13 @@
 const Helper = codeceptjs.helper;
 
-class WebDriver_commands extends Helper {
+class Driver_commands extends Helper {
+	
+	driver() {
+		return this.helpers.WebDriver || this.helpers.Playwright;
+	}
 
 	scrollAndClick(element) {
-		const I = this.helpers.WebDriver;
+		const I = this.driver();
 		this.scrollToElement(element);
 		return I.click(element);
 	}
@@ -23,13 +27,13 @@ class WebDriver_commands extends Helper {
 	}
 
 	async seeVisible(locator) {
-		const el = await this.helpers.WebDriver._locate(locator, false);
+		const el = await this.driver()._locate(locator, false);
 		let isDisplayed = await this._forEachAsync(el, async el => el.isDisplayed());
 		return Array.isArray(isDisplayed) && (isDisplayed[0] === true);
 	}
 
 	scrollDownToPixel(elementId, pixel) {
-		const I = this.helpers.WebDriver;
+		const I = this.driver();
 		I.wait(2);
 		I.waitForElement('#' + elementId);
 		I.wait(1);
@@ -37,9 +41,9 @@ class WebDriver_commands extends Helper {
 	}
 
 	scrollToElement(locator) {
-		const I = this.helpers.WebDriver;
+		const I = this.driver();
 		return I.scrollTo(locator, 0, -100);
 	}
 }
 
-module.exports = WebDriver_commands;
+module.exports = Driver_commands;

@@ -1,11 +1,11 @@
 const master = require('./lib/config/master/codecept.master.conf');
 const configure = require('./lib/config/configure');
-const Webdriver_commands = require.resolve(
-  './lib/helpers/webdriver-commands.helper.js'
+const Driver_commands = require.resolve(
+  './lib/helpers/driver-commands.helper.js'
 );
 
 module.exports = {
   config: { master },
-  helpers: { Webdriver_commands },
+  helpers: { Driver_commands },
   configure
 };

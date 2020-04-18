@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@wdio/selenium-standalone-service": "5.16.10",
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
+    "cli-ux": "^5.4.5",
     "codeceptjs": "^2.5.0",
     "debug": "^4.1.1",
     "deepmerge": "^4.2.2",

@@ -1,5 +1,6 @@
 const BROWSER = process.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
 const merge = require('deepmerge');
+const host = require('../../host/host');
 
 const getPlaywrightBrowser = function() {
   let browser = process.profile || BROWSER;
@@ -23,8 +24,13 @@ const get = function(conf) {
 const playwright_conf = {
   helpers: {
     Playwright: {
-      waitForNavigation: 'domcontentloaded',
-      waitForAction: 500,
+      url: host.get(),
+      waitForNavigation: 'networkidle0',
+      waitForAction: 1000,
+      emulate: {
+        ignoreHTTPSErrors: true,
+        acceptDownloads: true
+      },
       browser: getPlaywrightBrowser()
     }
   }

@@ -1,11 +1,12 @@
 const webdriverConf = require('../drivers/webdriver.conf');
 const playwrightConf = require('../drivers/playwright.conf');
 const chalk = require('chalk');
-const figlet = require('figlet');
+const host = require('../../host/host');
 const emoji = require('node-emoji');
+const logger = require('../../logger/logger');
 
-const web_driver_commands = require.resolve(
-  '../../helpers/webdriver-commands.helper.js'
+const driver_commands = require.resolve(
+  '../../helpers/driver-commands.helper.js'
 );
 const custom_methods = require.resolve('../../helpers/custom-methods.js');
 const { steps } = require('../bdd/steps');
@@ -17,13 +18,16 @@ const logInfo = (master_conf, driver) => {
     '\n' +
       chalk.bgBlue.bold(emoji.emojify(':rocket: ') + `Launching browser '${master_conf.helpers[driver].browser}' on ${driver} ...\n`)
   );
-  // console.info(chalk.gray.bold('Tests are running on : ') + chalk.blue.bold(master_conf.helpers[driver].browser  + '\n'));
 };
 
 let master_conf = {
   helpers: {
-    WebDriver_commands: {
-      require: web_driver_commands
+    Driver_commands: {
+      require: driver_commands
+    },
+    REST: {
+      host: host.get(),
+      timeout: '300000'
     }
   },
   plugins: {
