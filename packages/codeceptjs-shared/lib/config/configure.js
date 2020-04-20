@@ -2,6 +2,7 @@ const merge = require('deepmerge');
 const master_conf = require('./master/codecept.master.conf').master_conf;
 const logger = require('../logger/logger');
 const driversConf = require('./drivers/drivers.conf');
+const gDriver = process.env.DRIVER;
 
 logger.welcome();
 
@@ -14,16 +15,13 @@ const create = (conf) => {
     const driver =
         master_conf.helpers[
             Object.keys(master_conf.helpers).find(
-                (driver) =>
-                    driver.toLowerCase() === process.env.DRIVER.toLowerCase()
+                (driver) => driver.toLowerCase() === gDriver.toLowerCase()
             )
         ];
 
     if (!driver) {
         logger.error(
-            `'${
-                process.env.DRIVER
-            }' is not a supported driver. Supported drivers are: [${Object.keys(
+            `'${gDriver}' is not a supported driver. Supported drivers are: [${Object.keys(
                 driversConf
             )}]`
         );
@@ -32,7 +30,7 @@ const create = (conf) => {
     const browser = driver.browser;
 
     logger.log({
-        message: `Launching '${browser}' on ${driver}`,
+        message: `Launching '${browser}' on ${gDriver}`,
         emoji: 'star2',
     });
 
