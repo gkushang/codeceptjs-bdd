@@ -18,6 +18,10 @@ const host = () => {
     log({ message: `Host: ${process.env.HOST}`, emoji: 'earth_americas' });
 };
 
+const error = (errorMessage) => {
+    throw new Error(`${emoji.get('warning')}  ${errorMessage}`);
+};
+
 const welcome = () => {
     console.clear();
 
@@ -29,7 +33,7 @@ const welcome = () => {
         message = message.concat(zap).concat(' ');
     }
 
-    message = message.concat('  Codeceptjs BDD Acceptance Tests  ');
+    message = message.concat('  Codeceptjs BDD Acceptance Tests   ');
 
     for (let m = 0; m < i; m++) {
         message = message.concat(zap).concat(' ');
@@ -38,4 +42,4 @@ const welcome = () => {
     cli.default.log(chalk.yellow(message.concat('\n\n')));
 };
 
-module.exports = { log, welcome, host };
+module.exports = { log, welcome, host, error };

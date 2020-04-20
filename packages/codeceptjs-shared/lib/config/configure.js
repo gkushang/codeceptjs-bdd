@@ -1,6 +1,7 @@
 const merge = require('deepmerge');
 const master_conf = require('./master/codecept.master.conf').master_conf;
 const logger = require('../logger/logger');
+const driversConf = require('./drivers/drivers.conf');
 
 logger.welcome();
 
@@ -10,16 +11,25 @@ logger.welcome();
  * @param {object} conf
  */
 const create = (conf) => {
-    const driver = process.env.DRIVER.toLowerCase();
-    let browser;
+    const driver =
+        master_conf.helpers[
+            Object.keys(master_conf.helpers).find(
+                (driver) =>
+                    driver.toLowerCase() === process.env.DRIVER.toLowerCase()
+            )
+        ];
 
-    if (driver === 'playwright') {
-        browser = master_conf.helpers['Playwright'].browser;
-        delete conf.helpers.WebDriver;
-    } else {
-        browser = master_conf.helpers['WebDriver'].browser;
-        delete conf.helpers.Playwright;
+    if (!driver) {
+        logger.error(
+            `'${
+                process.env.DRIVER
+            }' is not a supported driver. Supported drivers are: [${Object.keys(
+                driversConf
+            )}]`
+        );
     }
+
+    const browser = driver.browser;
 
     logger.log({
         message: `Launching '${browser}' on ${driver}`,

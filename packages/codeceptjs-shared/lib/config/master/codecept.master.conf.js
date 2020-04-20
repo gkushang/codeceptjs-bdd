@@ -1,29 +1,15 @@
-const webdriverConf = require('../drivers/webdriver.conf');
-const playwrightConf = require('../drivers/playwright.conf');
-const chalk = require('chalk');
+const driversConf = require('../drivers/drivers.conf');
 const host = require('../../host/host');
-const emoji = require('node-emoji');
 
 const driver_commands = require.resolve(
     '../../helpers/driver-commands.helper.js'
 );
+
 const custom_methods = require.resolve('../../helpers/custom-methods.js');
 const { steps } = require('../bdd/steps');
 const { pageObjects } = require('../bdd/pageObjects');
 
-const DRIVER = process.env.DRIVER || 'webdriver';
-
-const logInfo = (master_conf, driver) => {
-    console.info(
-        '\n' +
-            chalk.bgBlue.bold(
-                emoji.emojify(':rocket: ') +
-                    `Launching browser '${master_conf.helpers[driver].browser}' on ${driver} ...\n`
-            )
-    );
-};
-
-let master_conf = {
+let masterConf = {
     output: process.env.CODECEPT_RELATIVE_PATH + 'report',
     cleanup: true,
     helpers: {
@@ -76,15 +62,16 @@ let master_conf = {
     },
 };
 
-if (DRIVER.toLowerCase() === 'webdriver') {
-    master_conf = webdriverConf.get(master_conf);
-    logInfo(master_conf, 'WebDriver');
-}
-if (DRIVER.toLowerCase() === 'playwright') {
-    master_conf = playwrightConf.get(master_conf);
-    logInfo(master_conf, 'Playwright');
+const driverConf =
+    driversConf[
+        Object.keys(driversConf).find(
+            (driver) =>
+                driver.toLowerCase() === process.env.DRIVER.toLowerCase()
+        )
+    ];
+
+if (driverConf) {
+    masterConf = driverConf.get(masterConf);
 }
 
-console.log('relativepath:: ', process.env.CODECEPT_RELATIVE_PATH);
-
-module.exports = { master_conf };
+module.exports = { master_conf: masterConf };
