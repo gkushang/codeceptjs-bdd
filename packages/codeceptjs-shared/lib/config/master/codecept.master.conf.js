@@ -24,13 +24,15 @@ const logInfo = (master_conf, driver) => {
 };
 
 let master_conf = {
+    output: process.env.CODECEPT_RELATIVE_PATH + 'report',
+    cleanup: true,
     helpers: {
         Driver_commands: {
             require: driver_commands,
         },
         REST: {
             host: host.get(),
-            timeout: '300000',
+            timeout: 300000,
         },
     },
     plugins: {
@@ -66,6 +68,7 @@ let master_conf = {
     },
     gherkin: {
         steps: steps(),
+        features: process.env.CODECEPT_RELATIVE_PATH + 'features/**/*.feature',
     },
     include: {
         ...pageObjects(),
@@ -81,5 +84,7 @@ if (DRIVER.toLowerCase() === 'playwright') {
     master_conf = playwrightConf.get(master_conf);
     logInfo(master_conf, 'Playwright');
 }
+
+console.log('relativepath:: ', process.env.CODECEPT_RELATIVE_PATH);
 
 module.exports = { master_conf };
