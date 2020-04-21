@@ -98,7 +98,8 @@ const run = async () => {
 
     log.infoAboutPaths(path.join(ROOT_PATH, RELATIVE_PATH, ACCEPTANCE));
 
-    const { DRIVER } = await aboutDriver(
+    const { DRIVER } = await aboutDriver();
+
     log.tipsToExecuteOnDriver();
 
     // create directoty and copy acceptnace
