@@ -5,7 +5,7 @@ const figlet = require('figlet');
 const shell = require('shelljs');
 const path = require('path');
 const fs = require('fs');
-const { addNpmScripts, installDepedencies } = require('./add.to.package');
+const { addNpmScripts, installDepedencies } = require('./update.package');
 const log = require('./logger');
 const {
     aboutProjectPaths,
@@ -32,7 +32,7 @@ const run = async () => {
 
         shell.cp(
             '-R',
-            path.join(process.cwd(), ACCEPTANCE),
+            path.join(__dirname, `../${ACCEPTANCE}`),
             path.join(ROOT_PATH, RELATIVE_PATH)
         );
     };
@@ -96,18 +96,22 @@ const run = async () => {
         RELATIVE_PATH,
     } = await aboutProjectPaths();
 
-    const { DRIVER } = await aboutDriver();
+    log.infoAboutPaths(path.join(ROOT_PATH, RELATIVE_PATH, ACCEPTANCE));
+
+    const { DRIVER } = await aboutDriver(
+    log.tipsToExecuteOnDriver();
 
     // create directoty and copy acceptnace
     if (!fs.existsSync(ROOT_PATH)) {
         shell.mkdir('-p', ROOT_PATH);
     }
 
+    // console.log('__directory ', __directory);
     // copy acceptance tests
     copyAcceptanceTests();
 
     // copy codecept conf
-    shell.cp('-R', path.join(process.cwd(), 'codecept.conf.js'), ROOT_PATH);
+    shell.cp('-R', path.join(__dirname, '../codecept.conf.js'), ROOT_PATH);
 
     // get config and packagejson
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
@@ -127,12 +131,14 @@ const run = async () => {
     // create package.json if not exists
     if (!fs.existsSync(path.join(ROOT_PATH, 'package.json'))) {
         log.error(ROOT_PATH);
-        shell.cp('-R', path.join(process.cwd(), 'package.json'), ROOT_PATH);
+        shell.cp('-R', path.join(__dirname, '../package.json'), ROOT_PATH);
     }
 
     shell.cd(ROOT_PATH);
 
     await updateDriver();
+
+    log.scenarioExecutions();
 
     const { SHOULD_EXECUTE } = await aboutScenarioExeuctions();
 

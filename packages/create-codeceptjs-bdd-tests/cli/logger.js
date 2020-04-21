@@ -64,26 +64,26 @@ const welcome = () => {
     );
 };
 
+const infoAboutPaths = (path) => {
+    cli.default.log(
+        '\n' +
+            chalk.bold.red(
+                emoji.emojify(':information_desk_person:') +
+                    '(info) Codecpetjs BDD tests will be created at : '
+            ) +
+            chalk.bold.bgBlue(path) +
+            '\n'
+    );
+};
+
 const saucelabsInfo = (username, key) => {
     cli.default.log(
         '\n' +
             chalk.bold.red(
-                emoji.emojify(':warning:  ') +
-                    'You must export Saucelabs Access Key through Environment Variable "SAUCE_KEY" to run your tests on Saucelabs. It is not recommend to store it on the Source Control.\n\n'
+                emoji.emojify(':information_desk_person:') +
+                    '(tips) You can run tests on Saucelabs thru a "--profile" flag: '
             ) +
-            chalk.bold.red(
-                emoji.emojify(':information_desk_person:  ') +
-                    'It is recommended to export your Saucelabs Username and Access Key through your ./bash_profile or ./zshrc. Add following to your profile:'
-            ) +
-            chalk.bold.red(
-                '\n\n' +
-                    'export SAUCE_USERNAME=' +
-                    username +
-                    '\n' +
-                    'export SAUCE_KEY=' +
-                    key +
-                    '\n\n'
-            )
+            chalk.bold.bgBlue('yarn acceptance --profile sauce:chrome')
     );
 };
 
@@ -111,4 +111,37 @@ const failure = (message) => {
     );
     shell.exit(1);
 };
-module.exports = { log, welcome, error, success, failure, saucelabsInfo };
+
+const tipsToExecuteOnDriver = () => {
+    cli.default.log(
+        '\n' +
+            chalk.bold.red(
+                emoji.emojify(':information_desk_person:') +
+                    '(tips) You can run tests on either driver thru "DRIVER" env variable: '
+            ) +
+            chalk.bold.bgBlue('DRIVER=playwright yarn acceptance') +
+            '\n'
+    );
+};
+
+const scenarioExecutions = () => {
+    cli.default.log(
+        chalk.bold.green(
+            '\n\n' +
+                emoji.emojify(':star2: ') +
+                emoji.emojify(':rainbow: ') +
+                'Codeceptjs-BDD framework is packaged with the Sample UI Automated Scenarios, called Starter Kit.'
+        )
+    );
+};
+module.exports = {
+    log,
+    welcome,
+    error,
+    success,
+    failure,
+    saucelabsInfo,
+    scenarioExecutions,
+    tipsToExecuteOnDriver,
+    infoAboutPaths,
+};
