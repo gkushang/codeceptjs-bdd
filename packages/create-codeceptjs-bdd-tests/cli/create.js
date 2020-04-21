@@ -136,7 +136,6 @@ const run = async () => {
     }
 
     shell.cd(ROOT_PATH);
-    // shell.cp('-R', path.join(ROOT_PATH, 'package.json'));
 
     await updateDriver();
 

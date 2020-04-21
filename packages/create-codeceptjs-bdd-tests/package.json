@@ -1,5 +1,5 @@
 {
-    "name": "ccreate-codeceptjs-bdd-tests",
+    "name": "create-codeceptjs-bdd-tests",
     "version": "5.0.0",
     "description": "CodeceptJs Cucumber E2E Framework",
     "scripts": {
@@ -11,9 +11,9 @@
         "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
     },
     "bin": {
-        "create-codeceptjs-bdd-tests": "./cli.js"
+        "create-codeceptjs-bdd-tests": "./cli/create.js"
     },
-    "main": "cli.js",
+    "main": "./cli/create.js",
     "keywords": [
         "Cucumber",
         "CodeceptJS",
