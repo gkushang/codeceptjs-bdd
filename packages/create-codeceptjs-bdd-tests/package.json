@@ -1,6 +1,6 @@
 {
     "name": "create-codeceptjs-bdd-tests",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "description": "CodeceptJs Cucumber E2E Framework",
     "scripts": {
         "acceptance": "./node_modules/.bin/codeceptjs run --verbose",
