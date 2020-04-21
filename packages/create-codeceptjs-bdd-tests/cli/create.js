@@ -3,7 +3,6 @@
 const chalk = require('chalk');
 const figlet = require('figlet');
 const shell = require('shelljs');
-const emoji = require('node-emoji');
 const path = require('path');
 const fs = require('fs');
 const { addNpmScripts, installDepedencies } = require('./add.to.package');
@@ -27,7 +26,6 @@ const run = async () => {
             ACCEPTANCE
         );
 
-        console.log('paths:: ================= ', acceptanceTestsPath);
         if (!fs.existsSync(acceptanceTestsPath)) {
             shell.mkdir('-p', acceptanceTestsPath);
         }
@@ -37,8 +35,6 @@ const run = async () => {
             path.join(process.cwd(), ACCEPTANCE),
             path.join(ROOT_PATH, RELATIVE_PATH)
         );
-
-        console.log('copy done');
     };
 
     /*
@@ -113,7 +109,6 @@ const run = async () => {
     // copy codecept conf
     shell.cp('-R', path.join(process.cwd(), 'codecept.conf.js'), ROOT_PATH);
 
-    console.log('copies =====');
     // get config and packagejson
     const configFile = path.join(ROOT_PATH, 'codecept.conf.js');
     const packageJson = path.join(ROOT_PATH, 'package.json');

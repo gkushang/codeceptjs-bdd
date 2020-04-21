@@ -55,7 +55,7 @@ exports.aboutScenarioExeuctions = () => {
             name: 'SHOULD_EXECUTE',
             type: 'confirm',
             message:
-                'Do you want to run starter UI Automated Tests once setup is done?',
+                'Do you want to run the Starter UI Automated Tests once setup is done?',
         },
     ]);
 };

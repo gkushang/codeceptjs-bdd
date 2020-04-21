@@ -2,6 +2,7 @@ const cli = require('cli-ux');
 const emoji = require('node-emoji');
 const chalk = require('chalk');
 const figlet = require('figlet');
+const shell = require('shelljs');
 
 const log = (logMessage) => {
     let message = '';
