@@ -1,7 +1,7 @@
 language: node_js
 
 env:
-    - HOST=github.com CODECEPT_RELATIVE_PATH=./acceptance/ DEFAULT_WEBDRIVER_BROWSER=chrome DEFAULT_PLAYWRIGHT_BROWSER=chromium NODE_TLS_REJECT_UNAUTHORIZED=0
+    - HOST=github.com DRIVER=webdriver CODECEPT_RELATIVE_PATH=./acceptance/ DEFAULT_WEBDRIVER_BROWSER=chrome DEFAULT_PLAYWRIGHT_BROWSER=chromium NODE_TLS_REJECT_UNAUTHORIZED=0
 
 node_js:
     - 12
@@ -29,4 +29,4 @@ script:
     - whereis google-chrome-stable
     - whereis chromedriver
     - lerna bootstrap
-    - lerna run --scope codeceptjs-cucumber test
+    - lerna run --scope create-codeceptjs-bdd-tests test
