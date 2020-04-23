@@ -1972,24 +1972,6 @@ codeceptjs-saucehelper@^1.4.0:
   resolved "https://registry.yarnpkg.com/codeceptjs-saucehelper/-/codeceptjs-saucehelper-1.4.0.tgz#1b94dd73670d93194b2dcfbb7824a8730b0a391a"
   integrity sha512-ZsEuSJFqHhQxKymWjcrYeZqj/tlEX7jbpN8VhXJRb5EEfCLPQxDjzRzNNlY6pugcReoJ/Hy/aflfQKbS80BlQg==
 
-codeceptjs-shared@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/codeceptjs-shared/-/codeceptjs-shared-5.0.1.tgz#29ecdec46fa6a3604864b6f67a8a0cedd7381181"
-  integrity sha512-f9RKCS1vX6YOIXokI9ovMoiuGsdpTGZ+EECAOdejboJBII4al/ALq09/DarEHBsjtZe0lflYGhctWCH2Cr7RpQ==
-  dependencies:
-    "@wdio/selenium-standalone-service" "5.16.10"
-    camelcase "^6.0.0"
-    chalk "^4.0.0"
-    cli-ux "^5.4.5"
-    codeceptjs "^2.5.0"
-    debug "^4.1.1"
-    deepmerge "^4.2.2"
-    figlet "^1.3.0"
-    node-emoji "^1.10.0"
-    playwright "^0.12.1"
-    prettier "^2.0.4"
-    webdriverio "^5.2.2"
-
 codeceptjs@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-2.5.0.tgz#dee631ce18dd35d1237dbb28ee47a02f19a9a2ec"
