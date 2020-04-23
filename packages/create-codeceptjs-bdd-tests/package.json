@@ -1,6 +1,6 @@
 {
     "name": "create-codeceptjs-bdd-tests",
-    "version": "5.0.7",
+    "version": "5.0.8",
     "author": {
         "name": "Kushang Gajjar",
         "email": "g.kushang@gmail.com"
@@ -41,7 +41,7 @@
         "allure-commandline": "^2.9.0",
         "codeceptjs": "^2.5.0",
         "codeceptjs-saucelabs": "^5.0.0",
-        "codeceptjs-shared": "^5.0.0",
+        "codeceptjs-shared": "^5.0.1",
         "debug": "^4.1.1",
         "deepmerge": "^4.0.0",
         "faker": "^4.1.0",
