@@ -17,7 +17,7 @@ let masterConf = {
             require: driver_commands,
         },
         REST: {
-            host: host.get(),
+            endpoint: host.get(),
             timeout: 300000,
         },
     },
