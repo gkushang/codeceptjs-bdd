@@ -6,7 +6,7 @@ const configure = require('codeceptjs-shared').configure;
 
 let conf = {
     name: 'Codeceptjs BDD Acceptance Tests',
+    // add more configuration as required
 };
 
-console.log(configure.create(conf));
 exports.config = configure.create(conf);
