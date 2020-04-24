@@ -140,13 +140,6 @@ const run = async () => {
     });
 
     updateEnvs.relativePath({ relativePath: RELATIVE_PATH });
-    // // update relative path
-    // shell.sed(
-    //     '-i',
-    //     './acceptance/',
-    //     './' + RELATIVE_PATH + '/acceptance/',
-    //     configFile
-    // );
 
     // create package.json if not exists
     if (!fs.existsSync(path.join(ROOT_PATH, 'package.json'))) {

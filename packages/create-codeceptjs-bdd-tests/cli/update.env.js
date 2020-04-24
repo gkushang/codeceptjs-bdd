@@ -4,6 +4,24 @@ const path = require('path');
 
 class UpdateEnvironments {
     constructor(envs) {
+        const sourceSecrets = path.join(
+            envs.rootPath,
+            envs.relativePath,
+            `acceptance`,
+            'config',
+            'dev.codecept.secrets.example'
+        );
+
+        const destinationSecrets = path.join(
+            envs.rootPath,
+            envs.relativePath,
+            `acceptance`,
+            'config',
+            'dev.codecept.secrets'
+        );
+
+        fs.copyFileSync(sourceSecrets, destinationSecrets);
+
         this.codeceptDefaults = path.join(
             envs.rootPath,
             envs.relativePath,
