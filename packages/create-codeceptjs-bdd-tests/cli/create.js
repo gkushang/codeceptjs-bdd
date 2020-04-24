@@ -5,6 +5,8 @@ const figlet = require('figlet');
 const shell = require('shelljs');
 const path = require('path');
 const fs = require('fs');
+const UpdateEnvironments = require('./update.env');
+
 const { addNpmScripts, installDepedencies } = require('./update.package');
 const log = require('./logger');
 const {
@@ -16,9 +18,10 @@ const {
 } = require('./ask');
 
 const run = async () => {
-    /*
-     * Copy acceptance tests
-     */
+    /**********************************************
+     * copy acceptance tests
+     **********************************************/
+
     const copyAcceptanceTests = async () => {
         const acceptanceTestsPath = path.join(
             ROOT_PATH,
@@ -37,9 +40,9 @@ const run = async () => {
         );
     };
 
-    /*
-     * Update Driver
-     */
+    /**********************************************
+     * update driver
+     **********************************************/
     const updateDriver = async () => {
         if (DRIVER === 'WebDriver') {
             const { INTEGRATE_SAUCE_LABS } = await aboutSauceLabs();
@@ -49,17 +52,22 @@ const run = async () => {
                     SAUCE_USERNAME,
                     SAUCE_KEY,
                 } = await aboutSauceLabsAccount();
-                shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
+                // shell.sed('-i', '<sauce_username>', SAUCE_USERNAME, configFile);
+                updateEnvs.sauceLabs({
+                    sauceUsername: SAUCE_USERNAME,
+                    sauceKey: SAUCE_KEY,
+                });
                 log.saucelabsInfo(SAUCE_USERNAME, SAUCE_KEY);
             }
         }
 
-        shell.sed('-i', 'webdriver', DRIVER, configFile);
+        // shell.sed('-i', 'webdriver', DRIVER, configFile);
     };
 
-    /*
-     * Execute Scenarios
-     */
+    /**********************************************
+     * execute scenario when setup is done
+     **********************************************/
+
     const executeScenario = async () => {
         if (SHOULD_EXECUTE) {
             shell.cd(ROOT_PATH);
@@ -88,7 +96,6 @@ const run = async () => {
     const ACCEPTANCE = 'acceptance';
 
     log.welcome();
-
     // ask about project paths
     const {
         PROJECT_NAME,
@@ -120,14 +127,26 @@ const run = async () => {
 
     // update project name
     shell.sed('-i', '<name>', PROJECT_NAME, configFile);
-
-    // update relative path
     shell.sed(
         '-i',
-        './acceptance/',
-        './' + RELATIVE_PATH + '/acceptance/',
+        './acceptance',
+        './' + RELATIVE_PATH + '/acceptance',
         configFile
     );
+
+    const updateEnvs = new UpdateEnvironments({
+        rootPath: ROOT_PATH,
+        relativePath: RELATIVE_PATH,
+    });
+
+    updateEnvs.relativePath({ relativePath: RELATIVE_PATH });
+    // // update relative path
+    // shell.sed(
+    //     '-i',
+    //     './acceptance/',
+    //     './' + RELATIVE_PATH + '/acceptance/',
+    //     configFile
+    // );
 
     // create package.json if not exists
     if (!fs.existsSync(path.join(ROOT_PATH, 'package.json'))) {
@@ -138,6 +157,8 @@ const run = async () => {
     shell.cd(ROOT_PATH);
 
     await updateDriver();
+
+    updateEnvs.driver({ driver: DRIVER });
 
     log.scenarioExecutions();
 

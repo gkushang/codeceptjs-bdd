@@ -11,6 +11,7 @@ exports.aboutProjectPaths = () => {
         {
             name: 'ROOT_PATH',
             type: 'input',
+            default: '/Users/kgajjar/Desktop/cbdd-cli/s1',
             message:
                 'Enter the Full PATH to your destination Root project (full path to /package.json): ',
         },

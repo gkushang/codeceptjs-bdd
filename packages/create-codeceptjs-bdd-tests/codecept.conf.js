@@ -1,7 +1,12 @@
-const dotenv = require('dotenv');
+// load env variables - this should be the first line of config
+const dotenv = require('dotenv-extended');
 dotenv.config({
-    path: './acceptance/config/dev.codecept.env',
+    path: './acceptance/config/dev.codecept.secrets',
+    defaults: './acceptance/config/dev.codecept.defaults',
 });
+// this is globally defined here, and used across all step definitions for BDD Assertions
+const should = require('should');
+
 const configure = require('codeceptjs-shared').configure;
 
 let conf = {
