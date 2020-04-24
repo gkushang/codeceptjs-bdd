@@ -60,8 +60,6 @@ const run = async () => {
                 log.saucelabsInfo(SAUCE_USERNAME, SAUCE_KEY);
             }
         }
-
-        // shell.sed('-i', 'webdriver', DRIVER, configFile);
     };
 
     /**********************************************
@@ -114,7 +112,6 @@ const run = async () => {
         shell.mkdir('-p', ROOT_PATH);
     }
 
-    // console.log('__directory ', __directory);
     // copy acceptance tests
     copyAcceptanceTests();
 

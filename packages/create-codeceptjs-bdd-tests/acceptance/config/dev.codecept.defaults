@@ -15,10 +15,6 @@ DRIVER = webdriver
 DEFAULT_WEBDRIVER_BROWSER = chrome
 DEFAULT_PLAYWRIGHT_BROWSER = chromium
 
-# SAUCE LABS ENV
-SAUCE_USERNAME = <enter-your-saucelabs-username>
-SAUCE_ACCESS_KEY = <enter-your-saucelabs-accesskey>
-
 # APP ENV
 HOST = github.com # edit your default host. Preffered is localhost where your App is running
 END_POINT = /
