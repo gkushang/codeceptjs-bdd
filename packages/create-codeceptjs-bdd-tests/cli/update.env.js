@@ -37,9 +37,6 @@ class UpdateEnvironments {
             'config',
             'dev.codecept.secrets'
         );
-
-        console.log('codeceptDefaults: ', this.codeceptDefaults);
-        console.log('codeceptSecrets: ', this.codeceptSecrets);
     }
 
     driver = (envs) => {
@@ -47,7 +44,6 @@ class UpdateEnvironments {
     };
 
     relativePath = (envs) => {
-        console.log('update relative path: ');
         // update relative path
         shell.sed(
             '-i',
@@ -55,7 +51,6 @@ class UpdateEnvironments {
             './' + envs.relativePath + '/acceptance/',
             this.codeceptDefaults
         );
-        console.log('update relative path: ');
     };
 
     sauceLabs = (envs) => {

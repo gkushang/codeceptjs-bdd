@@ -68,8 +68,8 @@ const infoAboutPaths = (path) => {
     cli.default.log(
         '\n' +
             chalk.bold.red(
-                emoji.emojify(':information_desk_person:') +
-                    '(info) Codecpetjs BDD tests will be created at : '
+                emoji.emojify(':bulb:') +
+                    ' Codecpetjs BDD tests will be created at : '
             ) +
             chalk.bold.bgBlue(path) +
             '\n'
@@ -80,8 +80,8 @@ const saucelabsInfo = (username, key) => {
     cli.default.log(
         '\n' +
             chalk.bold.red(
-                emoji.emojify(':information_desk_person:') +
-                    '(tips) You can run tests on Saucelabs thru a "--profile" flag: '
+                emoji.emojify(':bulb:') +
+                    ' You can run tests on Saucelabs thru a "--profile" flag: '
             ) +
             chalk.bold.bgBlue('yarn acceptance --profile sauce:chrome')
     );
@@ -116,8 +116,8 @@ const tipsToExecuteOnDriver = () => {
     cli.default.log(
         '\n' +
             chalk.bold.red(
-                emoji.emojify(':information_desk_person:') +
-                    '(tips) You can run tests on either driver thru "DRIVER" env variable: '
+                emoji.emojify(':bulb:') +
+                    ' You can run tests on either driver thru "DRIVER" env variable: '
             ) +
             chalk.bold.bgBlue('DRIVER=playwright yarn acceptance') +
             '\n'
