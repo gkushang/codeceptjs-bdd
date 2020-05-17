@@ -39,4 +39,4 @@ jobs:
 workflows:
   acceptance-tests:
     jobs:
-      - CI-Acceptance
+      - ci-on-chrome-playwright
