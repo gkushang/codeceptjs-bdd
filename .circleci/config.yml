@@ -8,6 +8,13 @@ jobs:
 
     docker: # run the steps with Docker
       - image: circleci/node:12-browsers
+        environment:
+          HOST: github.com
+          DRIVER: webdriver
+          CODECEPT_RELATIVE_PATH: ./acceptance/
+          DEFAULT_WEBDRIVER_BROWSER: chrome
+          DEFAULT_PLAYWRIGHT_BROWSER: chromium
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
     steps:
       - checkout
 
