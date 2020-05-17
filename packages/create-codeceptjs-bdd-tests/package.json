@@ -11,7 +11,7 @@
         "acceptance:parallel": "./node_modules/.bin/codeceptjs run-multiple parallel",
         "acceptance:parallel:multibrowsers": "./node_modules/.bin/codeceptjs run-multiple multibrowsers",
         "acceptance:report": "./node_modules/.bin/allure serve ./acceptance/report",
-        "test": "yarn acceptance --profile chrome:headless && DRIVER=playwright yarn acceptance",
+        "test": "DRIVER=playwright yarn acceptance",
         "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
     },
     "bin": {
