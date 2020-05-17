@@ -16,9 +16,6 @@ jobs:
           command: |
             curl -sSL "https://nodejs.org/dist/v13.0.0/node-v13.0.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v13.0.0-linux-x64/bin/node
             curl https://www.npmjs.com/install.sh | sudo bash
-      - run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-      - run: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-      - run: sudo apt-get update && sudo apt-get install yarn && yarn -v
       - run:
           name: install chrome
           command: |
