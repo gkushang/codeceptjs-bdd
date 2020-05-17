@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@2.0.2
 jobs:
-  build-and-test:
+  CI-Acceptance:
     executor:
       name: node/default
 
@@ -19,23 +19,24 @@ jobs:
       - checkout
 
       - run:
-          name: install node
+          name: Installation
           command: |
             curl -sSL "https://nodejs.org/dist/v13.0.0/node-v13.0.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v13.0.0-linux-x64/bin/node
             curl https://www.npmjs.com/install.sh | sudo bash
-      - run:
-          name: install chrome
-          command: |
             wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
             unzip ~/chromedriver_linux64.zip -d ~/
             rm ~/chromedriver_linux64.zip
             sudo mv -f ~/chromedriver /usr/local/share/
             sudo chmod +x /usr/local/share/chromedriver
-      - run: yarn install
-      - run: yarn bootstrap
-      - run: yarn acceptance
+            yarn install
+      - run:
+          name: Bootstrap
+          command: yarn bootstrap
+      - run:
+          name: Run on Chrome:Headless & Playwright
+          command: yarn acceptance
 
 workflows:
   acceptance-tests:
     jobs:
-      - build-and-test
+      - CI-Acceptance
