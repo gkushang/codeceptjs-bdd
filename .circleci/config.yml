@@ -33,7 +33,7 @@ jobs:
           name: Bootstrap
           command: yarn bootstrap
       - run:
-          name: Run on Chrome:Headless & Playwright
+          name: Run acceptance on Chrome & Playwright Browsers
           command: yarn acceptance
 
 workflows:
