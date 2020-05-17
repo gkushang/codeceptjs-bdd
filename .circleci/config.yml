@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+  node: circleci/node@2.0.2
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+
+    docker: # run the steps with Docker
+      - image: circleci/openjdk:11.0.3-jdk-stretch #
+    steps:
+      - checkout
+
+      - run:
+          name: install node
+          command: |
+            curl -sSL "https://nodejs.org/dist/v13.0.0/node-v13.0.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v13.0.0-linux-x64/bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
+      - run:
+          name: install chrome
+          command: |
+            wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
+            unzip ~/chromedriver_linux64.zip -d ~/
+            rm ~/chromedriver_linux64.zip
+            sudo mv -f ~/chromedriver /usr/local/share/
+            sudo chmod +x /usr/local/share/chromedriver
+            sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+            npm install yarn -g
+      - run: yarn install
+      - run: yarn bootstrap
+      - run: yarn acceptance
+
+workflows:
+  acceptance-tests:
+    jobs:
+      - build-and-test
