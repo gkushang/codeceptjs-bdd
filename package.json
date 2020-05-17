@@ -20,7 +20,7 @@
     },
     "scripts": {
         "bootstrap": "lerna bootstrap",
-        "acceptance": "lerna run --scope create-codeceptjs-bdd-tests test"
+        "acceptance:chrome": "lerna run --scope create-codeceptjs-bdd-tests yarn acceptance --profile chrome:headless"
     },
     "version": "1.0.0",
     "description": "CodeceptJS Cucumber BDD Framework",
