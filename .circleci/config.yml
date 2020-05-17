@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@2.0.2
 jobs:
-  CI-Acceptance:
+  ci-on-chrome-playwright:
     executor:
       name: node/default
 
