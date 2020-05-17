@@ -24,7 +24,6 @@ jobs:
             rm ~/chromedriver_linux64.zip
             sudo mv -f ~/chromedriver /usr/local/share/
             sudo chmod +x /usr/local/share/chromedriver
-            sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
       - run: yarn install
       - run: yarn bootstrap
       - run: yarn acceptance
