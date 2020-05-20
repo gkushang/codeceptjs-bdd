@@ -5,7 +5,7 @@ const emoji = require('node-emoji');
 exports.addNpmScripts = (packageJson, RELATIVE_PATH, DRIVER) => {
     let parallelScript = '"codeceptjs run-multiple parallel"';
 
-    if (DRIVER === 'playwright') {
+    if (DRIVER.toLowerCase() === 'playwright') {
         parallelScript = '"codeceptjs run-workers 10"'
     }
 
@@ -13,7 +13,7 @@ exports.addNpmScripts = (packageJson, RELATIVE_PATH, DRIVER) => {
         '"scripts": {\n' +
         '\t"acceptance": "codeceptjs run --verbose",\n' +
         '\t"acceptance:parallel": ' + parallelScript + ',\n' +
-        '\t"acceptance:report": "allure serve ./' + RELATIVE_PATH + 'acceptance/report",';
+        '\t"acceptance:report": "allure serve ./' + RELATIVE_PATH + '/acceptance/report",';
 
     shell.sed('-i', '"scripts": {', SCRIPTS, packageJson);
 };

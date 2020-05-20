@@ -167,7 +167,7 @@ const run = async () => {
         SHOULD_EXECUTE
     } = await aboutScenarioExeuctions();
 
-    addNpmScripts(packageJson, RELATIVE_PATH);
+    addNpmScripts(packageJson, RELATIVE_PATH, DRIVER);
 
     installDepedencies();
 
