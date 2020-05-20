@@ -6,7 +6,7 @@ exports.addNpmScripts = (packageJson, RELATIVE_PATH, DRIVER) => {
     let parallelScript = '"codeceptjs run-multiple parallel"';
 
     if (DRIVER.toLowerCase() === 'playwright') {
-        parallelScript = '"codeceptjs run-workers 10"'
+        parallelScript = '"codeceptjs run-workers --suites 10"'
     }
 
     const SCRIPTS =

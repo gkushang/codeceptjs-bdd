@@ -9,7 +9,7 @@
     "homepage": "https://gkushang.github.io/",
     "scripts": {
         "acceptance": "./node_modules/.bin/codeceptjs run --verbose",
-        "acceptance:parallel": "./node_modules/.bin/codeceptjs run-workers 10",
+        "acceptance:parallel": "./node_modules/.bin/codeceptjs run-workers --suites 10",
         "acceptance:parallel:multibrowsers": "./node_modules/.bin/codeceptjs run-multiple multibrowsers",
         "acceptance:report": "./node_modules/.bin/allure serve ./acceptance/report",
         "test": "yarn acceptance --profile chrome:headless && DRIVER=playwright yarn acceptance",
