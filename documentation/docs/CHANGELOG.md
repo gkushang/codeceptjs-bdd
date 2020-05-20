@@ -39,9 +39,9 @@ $ yarn acceptance:report
 
 ```
 
-- Check incldued to verify if `config/codecet.dev.env` file exists.
+- Check incldued to verify if `config/codecept.dev.env` file exists.
 
-## 5.0.4 ((MAY-12-2020))
+## 5.0.4 (MAY-12-2020)
 
 - Add Mocha-styled acceptance scenario support
 - Add [Documentations](https://gkushang.github.io/03-mocha-styled/1-mocha-style/) about Writing Mocha-styled scenarios along with BDD-features
