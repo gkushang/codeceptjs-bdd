@@ -7,7 +7,7 @@ keywords: ['LWC', 'Salesforce', 'Web Components', 'Shadow', 'Shadow DOM']
 
 ## ☁︎ Automate Salesforce Lighting Web Components with [Micorsoft's Playwright](https://github.com/microsoft/playwright) Browsers
 
-💯 **ADVANTANGE:** The Shadow Locators are equivalent to [Document.querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector). Makes it simpler to Automate UI.
+💯 **ADVANTANGE:** The Shadow Locators are equivalent to [Document.querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector). Makes it simpler to Automate WebComponents or LWC Apps.
 
 ### 💁‍♂️ About LWC
 
@@ -54,22 +54,21 @@ I.click({ css: '.checkout-button' });
 ##### ➨ Complete Example of LWC E2E Automation
 
 ```js
-// hypothetical e2e/integration tests example
-// __e2e__/__tests__
 
 Feature('Commerce Checkout');
 
-Scenario('Fred can checkout successfully',
-  (I) => {
-    I.fillField('.credit-card-number', '4444 4444 4444 4444');
-    // fill rest of the data
+Scenario('Fred can checkout successfully', I => {
 
+    I.fillField('.credit-card-number', '4444 4444 4444 4444');
     I.click({css: '.checkout-button');
 
-    // add assertions
+    // ...and more
+
     (await I.grabTextFrom('.success-message')).should.equal('Checkout Completed!');
+
   }
 )
+
 ```
 
 If you have any questions regarding automating Saleforce LWC or Web Components or Shadow DOM, please reach out to us by submitting an issue [here](https://github.com/gkushang/codeceptjs-bdd/issues).
