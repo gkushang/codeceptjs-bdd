@@ -26,7 +26,6 @@ const playwright_conf = {
         Playwright: {
             url: host.get(),
             waitForNavigation: 'domcontentloaded',
-            waitForAction: 1000,
             show: process.env.SHOW,
             emulate: {
                 ignoreHTTPSErrors: true,
@@ -38,5 +37,5 @@ const playwright_conf = {
 };
 
 module.exports = {
-    get
+    get,
 };
