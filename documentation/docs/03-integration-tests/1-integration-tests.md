@@ -1,7 +1,7 @@
 ---
-title: Mocha-styled Acceptance Scenarios
+title: Integration Tests - Mocha
 sub_title: Write Mocha-styled classical acceptance scenarios along with BDD Features
-parents: ['Mocha-styled']
+parents: ['Integration Tests']
 keywords: ['mocha', 'classical']
 ---
 
