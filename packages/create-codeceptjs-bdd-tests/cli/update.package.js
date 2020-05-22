@@ -11,14 +11,14 @@ exports.addNpmScripts = (packageJson, RELATIVE_PATH, DRIVER) => {
 
     const SCRIPTS =
         '"scripts": {\n' +
-        '\t"acceptance": "codeceptjs run --verbose",\n' +
+        '\t"acceptance": "yarn acceptance:clean && codeceptjs run --verbose",\n' +
         '\t"acceptance:parallel": ' +
         parallelScript +
         ',\n' +
         '\t"acceptance:report": "allure serve ./' +
         RELATIVE_PATH +
         '/acceptance/report",' +
-        '\t"acceptance:report": "allure generate -c -o ./' +
+        '\t"acceptance:clean": "allure generate -c -o ./' +
         RELATIVE_PATH +
         '/acceptance/report",';
 
