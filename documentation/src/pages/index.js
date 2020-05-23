@@ -161,6 +161,36 @@ const renderAppCards = () => {
       icon: <YouTubeIcon color="secondary" />,
       image: runSauceYt,
     },
+    {
+      size: 3,
+      title: 'Automate LWC',
+      description:
+        'Codeceptjs-BDD automates your Application build with Web Components and Shadow Root Elements. Take a look at the complete working example with Selenium and with Playwright Browsers.',
+      firstLinkName: 'Selenium',
+      link: '/05-01-salesforce-lwc/1-salesforce-lighting-web-components/',
+      secondLinkName: 'Playwright',
+      secondLink:
+        '/05-01-salesforce-lwc/1-salesforce-lighting-web-components-playwright/',
+      image: require('../images/lwc-sf.png'),
+    },
+    {
+      size: 3,
+      title: 'Integration Tests',
+      description:
+        'Codeceptjs-BDD automates your Application build with Web Components and Shadow Root Elements. Take a look at the complete working example with Selenium and with Playwright Browsers.',
+      firstLinkName: 'Learn More',
+      link: '/05-01-salesforce-lwc/1-salesforce-lighting-web-components/',
+      image: require('../images/imocha.png'),
+    },
+    {
+      size: 3,
+      title: 'E2E BDD Tests',
+      description:
+        'Codeceptjs-BDD automates your Application build with Web Components and Shadow Root Elements. Take a look at the complete working example with Selenium and with Playwright Browsers.',
+      firstLinkName: 'Learn More',
+      link: '/05-01-salesforce-lwc/1-salesforce-lighting-web-components/',
+      image: require('../images/e2e.png'),
+    },
   ];
 
   return appCardData.map(cardData => (
