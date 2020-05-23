@@ -1,7 +1,7 @@
 ---
 title: Feature
 sub_title: Write BDD Gherkin/Cucumber Feature Files
-parents: ['E2E BDD-Cucumber Tests']
+parents: ['Acceptance Tests', 'E2E BDD Tests']
 keywords: ['Feature files', 'Feature', 'cucumber', 'bdd', 'gherkin']
 ---
 

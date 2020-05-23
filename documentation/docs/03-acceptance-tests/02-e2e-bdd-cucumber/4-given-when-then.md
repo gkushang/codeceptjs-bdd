@@ -1,7 +1,7 @@
 ---
 title: Given When Then
 sub_title: BDD Cucumber Keywords - "GWT"
-parents: ['E2E BDD-Cucumber Tests']
+parents: ['Acceptance Tests', 'E2E BDD Tests']
 keywords: ['Given', 'When', 'Then', 'cucumber', 'bdd', 'gherkin', 'gwt']
 ---
 

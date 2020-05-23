@@ -1,7 +1,7 @@
 ---
 title: Scenario Outline
 sub_title: Add more examples as Data Sets Iterations to your Scenario
-parents: ['E2E BDD-Cucumber Tests']
+parents: ['Acceptance Tests', 'E2E BDD Tests']
 keywords:
   ['Scenario Outline', 'Datatable', 'data driven', 'cucumber', 'bdd', 'gherkin']
 ---
