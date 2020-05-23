@@ -296,8 +296,8 @@ const IndexPage = () => {
                 Codeceptjs BDD
               </Typography>
               <Typography variant="overline" display="block" gutterBottom>
-                CODECEPTJS BDD Framework integrated with Cucumber and Saucelabs
-                cloud.
+                CODECEPTJS BDD Framework integrated with Cucumber, Mocha and
+                Saucelabs cloud.
               </Typography>
             </Grid>
 
