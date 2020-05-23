@@ -1,8 +1,3 @@
 # Salesforce LWC Codecept Example with Playwright
 
-## Run Tests
-
-```bash
-yarn
-yarn acceptance
-```
+[More info ](http://localhost:8846/05-01-salesforce-lwc/1-salesforce-lighting-web-components-playwright/)
