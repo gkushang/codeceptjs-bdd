@@ -34,3 +34,19 @@
     SHOW=true yarn acceptance
 
 ```
+
+#### Run Parallel
+
+```bash
+
+   yarn acceptance:parallel
+
+```
+
+#### Launch HTML Report
+
+```bash
+
+   yarn acceptance:report
+
+```
