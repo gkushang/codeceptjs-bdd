@@ -29,8 +29,7 @@ const get = function (conf) {
     let profile = process.env.profile;
 
     if (profile && profile === 'chrome:headless') {
-        profile = profile.split(':')[0];
-        conf.helpers.WebDriver.browser = process.env.profile || BROWSER;
+        conf.helpers.WebDriver.browser = 'chrome';
         conf.helpers.WebDriver.capabilities = {
             chromeOptions: {
                 args: [
