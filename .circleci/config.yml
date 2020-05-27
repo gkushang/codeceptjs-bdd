@@ -41,9 +41,6 @@ jobs:
       - run:
           name: Run on WebDriver
           command: yarn circleci:test:webdriver
-      - run:
-          name: Run on WebDriver - Parallel
-          command: yarn circleci:test:webdriver:parallel
             
 workflows:
   acceptance-tests:
