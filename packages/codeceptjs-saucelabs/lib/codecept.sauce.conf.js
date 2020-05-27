@@ -21,13 +21,13 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
 
     function exportSauceBuildId() {
         if (process.env.SAUCE_BUILD) {
-            process.env.SAUCE_BUILD += ' - ' + Date.now();
-        } else {
-            process.env.SAUCE_BUILD = Date.now();
+            if (!process.env.SAUCE_BUILD.includes(' __-__ ')) {
+                process.env.SAUCE_BUILD += ' __-__ ' + Date.now();
+            }
         }
     }
 
-    function getBrowsers() {
+    function getBrowsers() {                    
         if (isSauceRequested()) {
             let multibrowsers = [];
             let requestedBrowsers = gProfile
