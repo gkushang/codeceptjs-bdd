@@ -26,7 +26,7 @@ const webdriver_conf = {
 
 const get = function (conf) {
     conf = merge(conf, webdriver_conf);
-    const profile = process.env.profile;
+    let profile = process.env.profile;
 
     if (profile && profile === 'chrome:headless') {
         profile = profile.split(':')[0];
