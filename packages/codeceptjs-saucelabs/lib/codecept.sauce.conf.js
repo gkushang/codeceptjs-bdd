@@ -7,13 +7,16 @@ const emoji = require('node-emoji');
 const SAUCE_DELIMITER = ':';
 const MULTI_BROWSER_DELIMITER = ',';
 
+const gProfile = process.env.profile || process.profile;
+
 function config(sauceUsername, sauceKey, userSpecificBrowsers) {
+    
     sauceBrowsers = userSpecificBrowsers
         ? merge(userSpecificBrowsers, defaultBrowsers)
         : defaultBrowsers;
 
     function isSauceRequested() {
-        return process.profile && process.profile.match('sauce:[a-zA-Z]');
+        return gProfile && gProfile.match('sauce:[a-zA-Z]');
     }
 
     function exportSauceBuildId() {
@@ -27,7 +30,7 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
     function getBrowsers() {
         if (isSauceRequested()) {
             let multibrowsers = [];
-            let requestedBrowsers = process.profile
+            let requestedBrowsers = gProfile
                 .split(SAUCE_DELIMITER)[1]
                 .split(MULTI_BROWSER_DELIMITER);
             debug(
@@ -74,7 +77,7 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
 
     if (isSauceRequested()) {
         if (sauceUsername) {
-            if (!sauceKey || !process.env.SAUCE_KEY) {
+            if (!sauceKey && !process.env.SAUCE_KEY) {
                 throw new Error(
                     'Sauce Key isn\'t defined. Please export as an environment variable "SAUCE_KEY".'
                 );

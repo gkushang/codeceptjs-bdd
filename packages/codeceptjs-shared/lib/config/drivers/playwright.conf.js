@@ -1,10 +1,11 @@
-const BROWSER = process.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
+const BROWSER = process.env.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
 const merge = require('deepmerge');
 const host = require('../../host/host');
 const { devices } = require('playwright');
+const gProfile = process.env.profile || process.profile;
 
 const getPlaywrightBrowser = function () {
-    let browser = process.profile || BROWSER;
+    let browser = process.env.profile || BROWSER;
 
     if (browser === 'safari') {
         return 'webkit';

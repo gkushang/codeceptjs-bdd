@@ -1,4 +1,4 @@
-const BROWSER = process.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
+const BROWSER = process.env.profile || process.env.DEFAULT_WEBDRIVER_BROWSER;
 const merge = require('deepmerge');
 const host = require('../../host/host');
 
@@ -26,10 +26,11 @@ const webdriver_conf = {
 
 const get = function (conf) {
     conf = merge(conf, webdriver_conf);
+    const profile = process.env.profile;
 
-    if (process.profile && process.profile === 'chrome:headless') {
-        process.profile = process.profile.split(':')[0];
-        conf.helpers.WebDriver.browser = process.profile || BROWSER;
+    if (profile && profile === 'chrome:headless') {
+        profile = profile.split(':')[0];
+        conf.helpers.WebDriver.browser = process.env.profile || BROWSER;
         conf.helpers.WebDriver.capabilities = {
             chromeOptions: {
                 args: [
@@ -40,13 +41,13 @@ const get = function (conf) {
             },
         };
     } else if (
-        process.profile &&
-        (process.profile === 'safari' || process.profile === 'firefox')
+        profile &&
+        (profile === 'safari' || profile === 'firefox')
     ) {
         conf.helpers.WebDriver.windowSize = 'maximize';
     }
 
-    if (!(process.profile && process.profile.match('sauce:[a-zA-Z]'))) {
+    if (!(profile && profile.match('sauce:[a-zA-Z]'))) {
         conf.multiple.parallel.browsers = [BROWSER];
     }
 
