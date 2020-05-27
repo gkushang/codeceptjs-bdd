@@ -36,16 +36,15 @@ jobs:
           name: Run on Playwright - Chrome, Firefox, Safari
           command: yarn circleci_test_playwright
       - run:
-        name: Run on Playwright - Parallel
-        command: yarn circleci_test_playwright_parallel
+          name: Run on Playwright - Parallel
+          command: yarn circleci_test_playwright_parallel
       - run:
-        name: Run on WebDriver
-        command: yarn circleci_test_webdriver
+          name: Run on WebDriver
+          command: yarn circleci_test_webdriver
       - run:
-        name: Run on WebDriver - Parallel
-        command: yarn circleci_test_webdriver_parallel
+          name: Run on WebDriver - Parallel
+          command: yarn circleci_test_webdriver_parallel
             
-
 workflows:
   acceptance-tests:
     jobs:
