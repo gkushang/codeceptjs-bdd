@@ -10,7 +10,7 @@ const MULTI_BROWSER_DELIMITER = ',';
 const gProfile = process.env.profile || process.profile;
 
 function config(sauceUsername, sauceKey, userSpecificBrowsers) {
-    
+
     sauceBrowsers = userSpecificBrowsers
         ? merge(userSpecificBrowsers, defaultBrowsers)
         : defaultBrowsers;
@@ -27,7 +27,7 @@ function config(sauceUsername, sauceKey, userSpecificBrowsers) {
         }
     }
 
-    function getBrowsers() {                    
+    function getBrowsers() {
         if (isSauceRequested()) {
             let multibrowsers = [];
             let requestedBrowsers = gProfile
