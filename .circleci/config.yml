@@ -34,16 +34,16 @@ jobs:
           command: yarn bootstrap
       - run:
           name: Run on Playwright - Chrome, Firefox, Safari
-          command: yarn circleci:test:playwright
+          command: yarn circleci_test_playwright
       - run:
         name: Run on Playwright - Parallel
-        command: yarn circleci:test:playwright:parallel
+        command: yarn circleci_test_playwright_parallel
       - run:
         name: Run on WebDriver
-        command: yarn circleci:test:webdriver
+        command: yarn circleci_test_webdriver
       - run:
         name: Run on WebDriver - Parallel
-        command: yarn circleci:test:webdriver:parallel
+        command: yarn circleci_test_webdriver_parallel
             
 
 workflows:
