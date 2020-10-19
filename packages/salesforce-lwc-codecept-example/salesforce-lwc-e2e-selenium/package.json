@@ -40,7 +40,6 @@
         "allure-commandline": "^2.13.0",
         "codeceptjs": "2.6.1",
         "codeceptjs-saucelabs": "^5.1.0",
-        "codeceptjs-configure": "^5.0.2",
         "debug": "^4.1.1",
         "deepmerge": "^4.2.2",
         "dotenv-extended": "^2.8.0",
@@ -53,5 +52,8 @@
     },
     "resolutions": {
         "minimist": "^1.2.5"
+    },
+    "dependencies": {
+        "query-selector-shadow-dom": "^0.8.0"
     }
 }

@@ -18,8 +18,10 @@ class HelloBindingPage extends LightingComponent {
         };
     }
 
-    enterName(name) {
-        return I.fillField(this.locators.inputField, name);
+    async enterName(name) {
+        await I.fill('ui-input input.input', name);
+        I.takeNap(30);
+        // return I.fillField(this.locators.inputField, name);
     }
 
     async grabTitle() {
