@@ -1,1 +1,1 @@
-# Migrated to Salesforce Open Source Platform - https://github.com/gkushang/codeceptjs-bdd
+# Migrated to Salesforce Open Source Platform - https://github.com/salesforce/codeceptjs-bdd
